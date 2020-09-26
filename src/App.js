@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+// pages
+import Timeline from './pages/timeline/Timeline';
+import Blog from "./pages/blogs/Blog";
+import Main from './pages/main/Main';
+// import jsyaml from 'js-yaml';
+// import { info } from "./libs/TImelineInfo";
+// import timeline from './../content/timeline/info.yaml';
+import { Route } from "react-router-dom";
 
 function App() {
+  // var doc = jsyaml.load(timeline);
+  // console.log(info)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Route exact path="/timeline" >
+        <Timeline />
+      </Route>
+      <Route exact path="/blog" >
+        <Blog />
+      </Route>
+      <Route exact path="/">
+        <Main />
+      </Route>
+      <Footer />
     </div>
   );
 }

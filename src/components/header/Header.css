@@ -1,0 +1,23 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  /* flex-direction: row; */
+  align-items: left;
+  margin: 2vh 2vw 1vh 1vw;
+  padding-left: 0px;
+  }
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.nav-button{
+  /* background: url("./white-paint.png"); */
+  /* background-image: url("./white-bg.png"); */
+  font-style: normal;
+  /* background-color: #fff; */
+  font-family: monospace;
+  font-size: 2vh;
+  border-radius: 5%;
+  border: 0;
+  margin-left: 20%;
+}
