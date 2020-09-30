@@ -7,8 +7,9 @@ import github from "./media/github.svg";
 import dribbble from "./media/dribble.svg";
 
 let footer_style = {
-    background: "#e4a9a9",
+    background: "#ffedef",
     // background: "#ebbcbc",
+    position: "sticky",
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     padding: "1% 15% 1% 15%",

@@ -13,8 +13,10 @@
 .nav-button{
   /* background: url("./white-paint.png"); */
   /* background-image: url("./white-bg.png"); */
+  align-self: bottom;
+  justify-self: bottom;
   font-style: normal;
-  /* background-color: #fff; */
+  background-color: #fff;
   font-family: monospace;
   font-size: 2vh;
   border-radius: 5%;

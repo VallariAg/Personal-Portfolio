@@ -1,3 +1,30 @@
 .icon-girl{
     height: 20vh;
 }
+.blog{
+    margin-bottom: 2%;
+}
+.article-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 5%;
+    margin: 4vh 2vw 7vh 2vw;
+    align-items: center;
+    justify-items: center;
+}
+.blogsHeader{
+    font-size: 3vh;
+    font-family: monospace;
+  }
+
+@media screen and (max-width: 600px) {
+    .article-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2%;
+        margin: 4vh 2vw 7vh 2vw;
+        align-items: center;
+        justify-items: center;
+    }
+
+}

@@ -3,11 +3,13 @@
 }
 
 :root {
-  --box-color: rgb(245, 219, 223);
+  --box-color: #fff;
+  --timeline-bg: rgb(223, 83, 118);
+  /* --timeline-bg: #ffd8e3; */
 }
 /* Set a background color */
 body {
-  background-color: #DFA2A2;
+  background-color: #fff7ff;
   font-family: Helvetica, sans-serif;
 }
 
@@ -17,14 +19,14 @@ body {
 }
 /* The actual timeline (the vertical ruler) */
 .timeline {
-  background-color: rgb(228, 169, 169);
+  background-color: var(--timeline-bg);
   border-radius: 3%;
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
 }
 .timeline-container {
-  background-color: rgb(228, 169, 169);
+  background-color: var(--timeline-bg);
   border-radius: 3%;
   position: relative;
   max-width: 1000px;
@@ -62,7 +64,7 @@ body {
   height: 25px;
   right: -17px;
   background-color: white;
-  border: 4px solid rgb(243, 190, 243);
+  border: 4px solid #ffbdc7;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
