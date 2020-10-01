@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 // pages
 import Timeline from './pages/timeline/Timeline';
 import Blog from "./pages/blogs/Blog";
+import BlogPost from "./pages/blogPost/BlogPost";
 import Main from './pages/main/Main';
 import Art from "./pages/art/Art";
 // import jsyaml from 'js-yaml';
@@ -23,6 +24,9 @@ function App() {
       </Route>
       <Route exact path="/blog" >
         <Blog />
+      </Route>
+      <Route path="/blog/:id" >
+        <BlogPost />
       </Route>
       <Route exact path="/art" >
         <Art />

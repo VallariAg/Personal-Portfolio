@@ -1,6 +1,8 @@
 .Card {
     max-width: 345;
-    min-width: 20vw;
+    width: 20vw;
+    height: 15vw;
+    text-decoration-style: none;
 }
 .icon-girl{
     height: 20vh;
@@ -20,7 +22,23 @@
     font-size: 3vh;
     font-family: monospace;
   }
+  @media (max-width: 1000px) {
+    .article-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 4%;
+        margin: 4vh 2vw 7vh 2vw;
+        align-items: center;
+        justify-items: center;
+    }
+    .Card {
+        max-width: 345;
+        width: 40vw;
+        height: 25vw;
+        text-decoration-style: none;
+    }
 
+}
 @media screen and (max-width: 600px) {
     .article-container{
         display: grid;
@@ -32,6 +50,8 @@
     }
     .Card {
         max-width: 345;
-        min-width: 70vw;
+        width: 60vw;
+        height: fit-content;
+        text-decoration-style: none;
     }
 }

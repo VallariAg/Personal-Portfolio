@@ -4,6 +4,7 @@ import girl from "./reading-girl.svg";
 // material
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 function BlogList() {
     let { loading, error, data } = useQuery(AllBlogQuery);
@@ -12,24 +13,23 @@ function BlogList() {
     if (error) return <p>Error!</p>
 
     return data.posts.map(({ id, title, description }) => (
-        <BlogCard title={title} description={description} />
+        <BlogCard title={title} description={description} id={id} />
     ));
 }
 
-function BlogCard({ title, description }) {
+function BlogCard({ title, description, id }) {
     return (
-        <Card className="Card">
-            <CardActionArea>
-                <CardMedia style={{ height: 140 }} image={girl} title="Title" />
-                <CardContent>
-                    <h5>{title}</h5>
-                    <p>{description}</p>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary"> Read </Button>
-            </CardActions>
-        </Card>
+        <Link to={"/blog/" + id}>
+            <Card className="Card">
+                <CardActionArea>
+                    <CardMedia style={{ height: 140 }} image={girl} title="Title" />
+                    <CardContent>
+                        <h5>{title}</h5>
+                        <p>{description}</p>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+        </Link>
     )
 }
 
@@ -56,6 +56,7 @@ query getAllBlogs {
     posts {
         title 
         id
+        description
     }
 }
 `;
