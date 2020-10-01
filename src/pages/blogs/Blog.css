@@ -1,3 +1,7 @@
+.Card {
+    max-width: 345;
+    min-width: 20vw;
+}
 .icon-girl{
     height: 20vh;
 }
@@ -21,10 +25,13 @@
     .article-container{
         display: grid;
         grid-template-columns: 1fr;
-        row-gap: 2%;
+        row-gap: 4%;
         margin: 4vh 2vw 7vh 2vw;
         align-items: center;
         justify-items: center;
     }
-
+    .Card {
+        max-width: 345;
+        min-width: 70vw;
+    }
 }

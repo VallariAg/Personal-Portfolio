@@ -3,20 +3,32 @@ import "./Blog.css";
 import girl from "./reading-girl.svg";
 // material
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button } from '@material-ui/core';
+import { useQuery, gql } from '@apollo/client';
 
-function BlogCard() {
+function BlogList() {
+    let { loading, error, data } = useQuery(AllBlogQuery);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error!</p>
+
+    return data.posts.map(({ id, title, description }) => (
+        <BlogCard title={title} description={description} />
+    ));
+}
+
+function BlogCard({ title, description }) {
     return (
-        <Card style={{ maxWidth: 345 }}>
+        <Card className="Card">
             <CardActionArea>
                 <CardMedia style={{ height: 140 }} image={girl} title="Title" />
                 <CardContent>
-                    <h5>Article title</h5>
-                    <p> Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica</p>
+                    <h5>{title}</h5>
+                    <p>{description}</p>
                 </CardContent>
             </CardActionArea>
-            {/* <CardActions>
+            <CardActions>
                 <Button size="small" color="primary"> Read </Button>
-            </CardActions> */}
+            </CardActions>
         </Card>
     )
 }
@@ -29,15 +41,21 @@ function Blog() {
                 <h1 style={{ color: "#000" }}>blogs</h1>
             </div>
             <div className="article-container">
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
+                {BlogList()}
             </div>
         </div>
     )
 }
 
+
 export default Blog;
+
+
+const AllBlogQuery = gql`
+query getAllBlogs {
+    posts {
+        title 
+        id
+    }
+}
+`;
