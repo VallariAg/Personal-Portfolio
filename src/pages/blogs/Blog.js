@@ -21,13 +21,13 @@ function BlogCard({ title, description, id }) {
     return (
         <Link to={"/blog/" + id}>
             <Card className="Card">
-                <CardActionArea>
-                    <CardMedia style={{ height: 140 }} image={girl} title="Title" />
-                    <CardContent>
-                        <h5>{title}</h5>
-                        <p>{description}</p>
-                    </CardContent>
-                </CardActionArea>
+                {/* <CardActionArea> */}
+                <CardMedia style={{ height: 140 }} image={girl} title="Title" />
+                <CardContent>
+                    <h5>{title}</h5>
+                    <p>{description}</p>
+                </CardContent>
+                {/* </CardActionArea> */}
             </Card>
         </Link>
     )
