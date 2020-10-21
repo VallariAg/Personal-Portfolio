@@ -15,8 +15,8 @@
   /* background-image: url("./white-bg.png"); */
   align-self: bottom;
   justify-self: bottom;
-  font-style: normal;
-  background-color: #fff;
+  /* font-style: normal; */
+  background-color: inherit;
   font-family: monospace;
   font-size: 2vh;
   border-radius: 5%;

@@ -1,8 +1,20 @@
 .Card {
     max-width: 345;
     width: 20vw;
-    height: 15vw;
+    height: fit-content;
     text-decoration-style: none;
+    box-shadow: 0 4px 8px 0 hsla(0, 7%, 16%, 0.2);
+    font-style: normal;
+}
+.titles{
+    color: black;
+    font-size: 1em;
+    font-weight: 450;
+}
+.description{
+    color: grey;
+    text-decoration-style: none;
+    text-decoration: none;
 }
 .icon-girl{
     height: 20vh;
@@ -12,17 +24,17 @@
 }
 .article-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 5%;
-    margin: 4vh 2vw 7vh 2vw;
+    margin: 4vh 10vw 7vh 10vw;
     align-items: center;
     justify-items: center;
 }
 .blogsHeader{
     font-size: 3vh;
     font-family: monospace;
-  }
-  @media (max-width: 1000px) {
+}
+@media (max-width: 1000px) {
     .article-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -34,12 +46,12 @@
     .Card {
         max-width: 345;
         width: 40vw;
-        height: 25vw;
+        /* height: 35vh; */
         text-decoration-style: none;
     }
 
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .article-container{
         display: grid;
         grid-template-columns: 1fr;

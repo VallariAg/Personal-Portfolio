@@ -4,12 +4,12 @@
 
 :root {
   --box-color: #fff;
-  --timeline-bg: rgb(223, 83, 118);
+  --timeline-bg: rgb(53, 51, 51);
   /* --timeline-bg: #ffd8e3; */
 }
 /* Set a background color */
 body {
-  background-color: #fff7ff;
+  background-color: #ffffff;
   font-family: Helvetica, sans-serif;
 }
 
@@ -39,7 +39,7 @@ body {
   content: '';
   position: absolute;
   width: 6px;
-  background-color: #F8F1F1;
+  background-color: rgb(255, 255, 255);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -64,7 +64,7 @@ body {
   height: 25px;
   right: -17px;
   background-color: white;
-  border: 4px solid #ffbdc7;
+  border: 4px solid #000000;
   top: 15px;
   border-radius: 50%;
   z-index: 1;

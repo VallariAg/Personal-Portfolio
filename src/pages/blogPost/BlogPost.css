@@ -1,0 +1,26 @@
+.BlogPost{
+    margin: 0 25vw 0 25vw;
+    /* word-wrap: ; */
+}
+.articleBody{
+    text-align: left;
+    font-family:  charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 150%;
+}
+Link, a{
+    color: rgb(83, 80, 80);
+    text-decoration: none;
+}
+@media (max-width: 700px) {
+    .BlogPost{
+        margin: 0 2vw 0 2vw;
+        word-wrap: break-word;
+    }
+}
+
+@media (max-width: 900px) {
+    .BlogPost{
+        margin: 0 10vw 0 10vw;
+        word-wrap: break-word;
+    }
+}

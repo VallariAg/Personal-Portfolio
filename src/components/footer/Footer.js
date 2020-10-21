@@ -7,7 +7,8 @@ import github from "./media/github.svg";
 import dribbble from "./media/dribble.svg";
 
 let footer_style = {
-    background: "#ffedef",
+    // background: "#bbb",
+    // background: "#212121",
     // background: "#ebbcbc",
     position: "sticky",
     display: "grid",
@@ -16,7 +17,7 @@ let footer_style = {
     margin: "3vh 0% 0% 0"
 }
 let icon_style = {
-    // background: "#DFA2A2",
+    // background: "#111",
     // borderRadius: "30%",
     // border: "5px",
     // padding: "1.5%",

@@ -13,9 +13,9 @@ function Block(props) {
     return (
         <div class={"container " + side}>
             <div class="content">
-                <h4 style={{ color: "#CB6262", margin: "10px 0px 0px 0px" }}>{props.title}</h4>
+                <h4 style={{ color: "#111", margin: "10px 0px 0px 0px" }}>{props.title}</h4>
                 <div style={{ marginTop: 0, color: "grey" }}>{props.title}</div>
-                <p style={{ color: "#CB6262", left: 0, marginLeft: 0 }} class="time">{props.time}</p>
+                <p style={{ color: "#555", left: 0, marginLeft: 0 }} class="time">{props.time}</p>
             </div>
         </div>
     )

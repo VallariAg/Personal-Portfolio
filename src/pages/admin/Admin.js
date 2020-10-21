@@ -4,7 +4,8 @@ import { useQuery, gql } from '@apollo/client';
 import CreateBlog from "./CreateBlog";
 import EditBlog from "./EditBlog";
 
-
+// TODO: 
+// CreateBlog and EditBlod have duplicate code
 
 function verfiyPassword(input_password, real_password) {
     const hash = crypto.createHash('sha256');

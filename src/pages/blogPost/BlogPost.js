@@ -1,28 +1,40 @@
 import React from 'react';
+import "./BlogPost.css";
+import ReactMarkdown from 'react-markdown';
 // material
-// import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button } from '@material-ui/core';
+import CodeBlock from "./CodeBlock";
 import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
+import markdownit from "markdown-it";
 
+// const md = markdownit({
+//   html: false,
+//   breaks: true,
+//   typographer: true
+// });
 
-
+const md = markdownit("commonmark");
 function BlogPost() {
-    const { id } = useParams();
+  const { id } = useParams();
 
-    const { loading, error, data } = useQuery(BlogQuery, { variables: { id: parseInt(id) } });
+  const { loading, error, data } = useQuery(BlogQuery, { variables: { id: parseInt(id) } });
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error!</p>
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error!</p>
 
-    const { title, body, createdAt } = data.post;
-
-    return (
-        <div>
-            <h1>{title}</h1>
-            <h6>{createdAt}</h6>
-            <p>{body}</p>
-        </div>
-    )
+  let { title, body, createdAt } = data.post;
+  // createdAt = new Date(createdAt);
+  return (
+    <div className="BlogPost">
+      <div style={{ fontSize: "5vh" }}>{title}</div>
+      <h6>{createdAt}</h6>
+      <ReactMarkdown
+        className="articleBody"
+        source={body}
+        renderers={{ code: ({ language, value }) => <CodeBlock language={language} code={value} /> }}
+      />
+    </div>
+  )
 }
 
 

@@ -1,7 +1,42 @@
 .art{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 5%;
+    margin: 4vh 10vw 7vh 10vw;
+    align-items: center;
+    justify-items: center;
+}
+.artHeader{
+    font-size: 3vh;
+    font-family: monospace;
+  }
+.icon-girl{
+    height: 20vh;
 }
 .image{
-    height: 10px;
+    /* height: 10vh; */
+    max-width: 345;
+    width: 20vw;
+    height: 15vw;
+    text-decoration-style: none;
+    box-shadow: 0 4px 8px 0 hsla(0, 7%, 16%, 0.2);
+}
+.dialog-img{
+    width: 100%;
+}
+@media screen and (max-width: 600px) {
+    .art{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 4%;
+        margin: 4vh 1vw 7vh 1vw;
+        align-items: center;
+        justify-items: center;
+    }
+    .image {
+        max-width: 345;
+        width: 60vw;
+        height: fit-content;
+        text-decoration-style: none;
+    }
 }
