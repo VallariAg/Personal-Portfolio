@@ -14,7 +14,7 @@
     height: 20vh;
 }
 .image{
-    /* height: 10vh; */
+    object-fit: cover;
     max-width: 345;
     width: 20vw;
     height: 15vw;

@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { Dialog } from '@material-ui/core';
-// import draw from "./draw/1.png";
-import sample from "./draw/sample.jpg";
-import sample2 from "./draw/1.png"
 import "./Art.css";
 import girl from "./girl.png";
 
+import { Dialog } from '@material-ui/core';
+import { useQuery, gql } from '@apollo/client';
 
+const artServerURL = process.env.REACT_APP_SERVER_URL + "/art/";
 
 function ArtDialog(props) {
     const { image, open, onClose } = props
@@ -20,6 +19,12 @@ function ArtDialog(props) {
 function Art() {
     const [open, setopen] = React.useState(false);
     const [selectedImage, setselectedImage] = React.useState("");
+
+    let { loading, error, data } = useQuery(ArtPOstQuery);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error!</p>
+
 
 
     const handleClickOpen = (image) => {
@@ -39,10 +44,12 @@ function Art() {
                 <h1 style={{ color: "#000" }}>art</h1>
             </div>
             <div className="art">
-                <img className="image" src={sample} onClick={() => handleClickOpen(sample)} />
-                <img className="image" src={sample2} onClick={() => handleClickOpen(sample2)} />
-                <img className="image" src={sample} onClick={() => handleClickOpen(sample)} />
-                <img className="image" src={sample2} onClick={() => handleClickOpen(sample2)} />
+                {
+                    data.getArtPosts.map((fileName) => {
+                        let imgURL = artServerURL + fileName;
+                        return <img className="image" id={fileName} src={imgURL} onClick={() => handleClickOpen(imgURL)} />
+                    })
+                }
                 <ArtDialog image={selectedImage} open={open} onClose={handleClose} />
             </div>
         </div>
@@ -52,3 +59,9 @@ function Art() {
 
 
 export default Art;
+
+const ArtPOstQuery = gql`
+query getArtPosts {
+    getArtPosts
+}
+`;

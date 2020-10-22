@@ -54,8 +54,8 @@ export default Blog;
 
 const AllBlogQuery = gql`
 query getAllBlogs {
-                    posts {
-                    title 
+        posts {
+        title 
         id
         description
     }

@@ -1,19 +1,11 @@
 import React from 'react';
 import "./BlogPost.css";
-import ReactMarkdown from 'react-markdown';
-// material
 import CodeBlock from "./CodeBlock";
+
+import ReactMarkdown from 'react-markdown';
 import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-import markdownit from "markdown-it";
 
-// const md = markdownit({
-//   html: false,
-//   breaks: true,
-//   typographer: true
-// });
-
-const md = markdownit("commonmark");
 function BlogPost() {
   const { id } = useParams();
 
@@ -23,7 +15,7 @@ function BlogPost() {
   if (error) return <p>Error!</p>
 
   let { title, body, createdAt } = data.post;
-  // createdAt = new Date(createdAt);
+
   return (
     <div className="BlogPost">
       <div style={{ fontSize: "5vh" }}>{title}</div>
