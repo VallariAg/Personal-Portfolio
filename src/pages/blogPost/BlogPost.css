@@ -1,11 +1,13 @@
 .BlogPost{
-    margin: 0 25vw 0 25vw;
-    /* word-wrap: ; */
+    margin: 0 12vw 0 12vw;
+    /* text-align: left; */
+        /* word-wrap: ; */
 }
 .articleBody{
     text-align: left;
-    font-family:  charter, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-size: 150%;
+  font-family: 'Open Sans', sans-serif;
+  /* font-family:  system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;; */
+    font-size: 100%;
 }
 Link, a{
     color: rgb(83, 80, 80);
@@ -20,7 +22,7 @@ Link, a{
 
 @media (max-width: 900px) {
     .BlogPost{
-        margin: 0 10vw 0 10vw;
+        margin: 0 0vw 0 0vw;
         word-wrap: break-word;
     }
 }

@@ -10,11 +10,12 @@ let footer_style = {
     // background: "#bbb",
     // background: "#212121",
     // background: "#ebbcbc",
-    position: "sticky",
+    // bottom: 0,
+    position: "relative",
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     padding: "1% 15% 1% 15%",
-    margin: "3vh 0% 0% 0"
+    marginTop: "1px"
 }
 let icon_style = {
     // background: "#111",

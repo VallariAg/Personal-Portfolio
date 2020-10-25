@@ -1,50 +1,56 @@
-import React from 'react';
-import './Timeline.css';
-import baby from './baby.svg';
-import girl from './running-girl.svg';
+import React, { useState } from 'react';
+import './timeline.css';
 
-let side = "left";
-let changeSide = (side) => {
-    return side === "left" ? "right" : "left";
+function MoreDesc(descButton, descInfo) {
+    if (descButton == "more" || descButton == "") {
+        return ""
+    }
+    else {
+        return <p className="moreDesc">{descInfo}</p>
+    }
 }
-
-function Block(props) {
-    side = changeSide(side);
+function Block({ time, heading, desc, descInfo }) {
+    const [descButton, setdescButton] = useState("more");
+    // if (descInfo === "") {
+    //     setdescButton("");
+    // }
     return (
-        <div class={"container " + side}>
-            <div class="content">
-                <h4 style={{ color: "#111", margin: "10px 0px 0px 0px" }}>{props.title}</h4>
-                <div style={{ marginTop: 0, color: "grey" }}>{props.title}</div>
-                <p style={{ color: "#555", left: 0, marginLeft: 0 }} class="time">{props.time}</p>
+        <li>
+            <div className="bullet pink"></div>
+            <div className="time">{time}</div>
+            <div className="desc">
+                <h3>{heading}</h3>
+                <h4>{desc}</h4>
+                {MoreDesc(descButton, descInfo)}
+                <button
+                    className="descButton"
+                    onClick={() => { (descButton == "more") ? setdescButton("less") : setdescButton("more") }}>
+                    {descButton}
+                </button>
             </div>
-        </div>
+        </li>
     )
 }
-
 function Timeline() {
     return (
         <div>
-            <div className="timelineHeader">
-                <img style={{ height: "20vh" }} src={girl} alt="icon" />
-                <h1 style={{ color: "black" }}>what am I upto?</h1>
+            <div className="blogsHeader">
+                <h1 style={{ color: "#000" }}>timeline </h1>
             </div>
-            <div className="timeline-container">
+            <div class="container">
                 <div class="timeline">
-                    <Block title="Women TechMakers Engineering Fellow" description="" time="April 2020" />
-                    <Block title="2017" description="" time="WTEF" />
-                    <Block title="2017" description="" time="WTEF" />
-                    <Block title="2017" description="" time="WTEF" />
-                    <Block title="2017" description="" time="WTEF" />
-                </div>
+                    <ul>
+                        <Block time="March 2020" heading="something" descInfo="shhs" desc="Some achivement idk Some achivement idkSome achivement idkSome achivement idkSome achivement idk" />
+                        <Block time="March 2030" heading="something" descInfo="shhs whaaaaaaaaaaaat" desc="Some achivement idk" />
+                        <Block time="May 2000" heading="birth" descInfo="" desc="worst achivement" />
 
-                <div style={{ color: "white" }}>
-                    <h4> May 2000</h4>
-                    <img src={baby} class="baby" alt="baby" />
+                    </ul>
                 </div>
             </div>
         </div>
     )
 }
+
 
 export default Timeline;
 

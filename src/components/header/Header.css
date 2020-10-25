@@ -3,20 +3,27 @@
   grid-template-columns: 1fr 6fr;
   /* flex-direction: row; */
   align-items: left;
-  margin: 2vh 2vw 1vh 1vw;
+  margin: 0vh 2vw 1vh 1vw;
   padding-left: 0px;
+  padding-top: 2%;
   }
 .nav {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* background-color: black; */
+  margin-left: 40%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .nav-button{
   /* background: url("./white-paint.png"); */
   /* background-image: url("./white-bg.png"); */
   align-self: bottom;
   justify-self: bottom;
+  padding: 2% 2% 2% 2%;
   /* font-style: normal; */
-  background-color: inherit;
+  background-color: white;
+  height: 100%;
+  /* color: white; */
+  margin-top: 0;
   font-family: monospace;
   font-size: 2vh;
   border-radius: 5%;

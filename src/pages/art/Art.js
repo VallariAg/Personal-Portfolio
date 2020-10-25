@@ -43,6 +43,7 @@ function Art() {
                 <img className="icon-girl" src={girl} alt="icon-girl" />
                 <h1 style={{ color: "#000" }}>art</h1>
             </div>
+            <p style={{ color: "grey" }}> All art content can also be found on my Dribbble or Instagram accounts. </p>
             <div className="art">
                 {
                     data.getArtPosts.map((fileName) => {

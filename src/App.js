@@ -17,24 +17,26 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Route exact path="/timeline" >
-        <Timeline />
-      </Route>
-      <Route exact path="/blog" >
-        <Blog />
-      </Route>
-      <Route path="/blog/:id" >
-        <BlogPost />
-      </Route>
-      <Route exact path="/art" >
-        <Art />
-      </Route>
-      <Route exact path="/admin" >
-        <Admin />
-      </Route>
-      <Route exact path="/">
-        <Main />
-      </Route>
+      <div className="pages">
+        <Route exact path="/timeline" >
+          <Timeline />
+        </Route>
+        <Route exact path="/blog" >
+          <Blog />
+        </Route>
+        <Route path="/blog/:id" >
+          <BlogPost />
+        </Route>
+        <Route exact path="/art" >
+          <Art />
+        </Route>
+        <Route exact path="/admin" >
+          <Admin />
+        </Route>
+        <Route exact path="/">
+          <Main />
+        </Route>
+      </div>
       <Footer />
     </div>
   );

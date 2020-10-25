@@ -15,11 +15,12 @@ function BlogPost() {
   if (error) return <p>Error!</p>
 
   let { title, body, createdAt } = data.post;
+  createdAt = new Date(parseInt(createdAt)).toDateString();
 
   return (
     <div className="BlogPost">
       <div style={{ fontSize: "5vh" }}>{title}</div>
-      <h6>{createdAt}</h6>
+      <p style={{ color: "grey", fontSize: "80%", margin: 0 }}>{createdAt}</p>
       <ReactMarkdown
         className="articleBody"
         source={body}
