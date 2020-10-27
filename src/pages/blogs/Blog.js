@@ -45,7 +45,7 @@ function Blog() {
         <div className="blog">
             <div className="blogsHeader">
                 <img className="icon-girl" src={girl} alt="icon-girl" />
-                <h1 style={{ color: "#000" }}>blogs</h1>
+                <h1 className="pageHeader">Blogs</h1>
             </div>
             <div className="article-container">
                 {BlogList()}

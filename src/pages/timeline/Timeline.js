@@ -38,11 +38,10 @@ function Timeline() {
     if (loading) return <p>Loading.. </p>
     if (error) return <p> Error! </p>
 
-    // let {title, body, time, description}
     return (
         <div className="Timeline">
             <div className="blogsHeader">
-                <h1 style={{ color: "#000" }}>timeline </h1>
+                <h1 className="pageHeader">Timeline </h1>
             </div>
             <div class="container">
                 <div class="timeline">

@@ -1,34 +1,58 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import bars from './bars.svg';
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { Dialog } from "@material-ui/core"
+import closeButton from "./close.svg";
 
+function NavButtons() {
+    return (
+        <Fragment>
+            <NavLink className="nav-button" activeClassName="selectedButton" to="/blog">
+                BLOG
+            </NavLink>
+            <NavLink className="nav-button" activeClassName="selectedButton" to="/art">
+                ART
+            </NavLink>
+            <NavLink className="nav-button" activeClassName="selectedButton" to="/timeline">
+                TIMELINE
+            </NavLink>
+            <NavLink className="nav-button" activeClassName="selectedButton" to="/about">
+                ABOUT
+            </NavLink>
+        </Fragment>
+    )
+}
 
 function Header() {
-    return (
-        <div class="header">
-            <Link to="/">
-                Vallari Agrawal
-                {/* <img src={bars} alt="menu" style={{ height: "4vh", marginLeft: 0, paddingLeft: 0 }} /> */}
-            </Link>
-            <nav className="nav">
+    const [open, setOpen] = useState(false);
 
-                <Link to="/blog">
-                    <button className="nav-button">blog</button>
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+    return (
+        <div className="topHeader sticky">
+            <div className="header">
+                <Link className="logo" to="/">
+                    Vallari Agrawal
                 </Link>
-                {/* <Link to="/projects">
-                    <button className="nav-button"> projects </button>
-                </Link> */}
-                <Link to="/art">
-                    <button className="nav-button"> art </button>
-                </Link>
-                <Link to="/timeline">
-                    <button className="nav-button"> timeline </button>
-                </Link>
-                <Link to="/about">
-                    <button className="nav-button"> about </button>
-                </Link>
-            </nav>
+                <nav className="nav">
+                    {NavButtons()}
+                </nav>
+                <nav className="nav-menu">
+                    <img src={bars} onClick={handleClickOpen} />
+                    <Dialog fullScreen open={open} onClose={handleClose} className="menu-dialog">
+                        <nav className="nav-menu-options">
+                            {NavButtons()}
+                            <img src={closeButton} style={{ height: "20%" }} className="nav-button" onClick={handleClose} />
+                        </nav>
+                    </Dialog>
+                </nav>
+            </div>
         </div>);
 }
 

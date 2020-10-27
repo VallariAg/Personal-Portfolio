@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@100&display=swap');
 .App {
   text-align: center;
   margin: 0 16vw 2px 16vw;
@@ -29,20 +30,23 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.pageHeader {
+  font-size: 200%;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.pageHeader:after {
+  content: " ";
+  border: 1px solid black;
+  margin-top: 2px;
+  margin-bottom: 15px;
+  margin-left: 40%;
+  display: block;
+  width: 20%;
+  /* max-width: 100px; */
+  text-align: right;
 }
+
 
 @keyframes App-logo-spin {
   from {

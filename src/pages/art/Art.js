@@ -41,7 +41,7 @@ function Art() {
         <div>
             <div className="artHeader">
                 <img className="icon-girl" src={girl} alt="icon-girl" />
-                <h1 style={{ color: "#000" }}>art</h1>
+                <h1 className="pageHeader">Art</h1>
             </div>
             <p style={{ color: "grey" }}> All art content can also be found on my Dribbble or Instagram accounts. </p>
             <div className="art">
