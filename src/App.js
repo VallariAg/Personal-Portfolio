@@ -11,6 +11,7 @@ import BlogPost from "./pages/blogPost/BlogPost";
 import Main from './pages/main/Main';
 import Art from "./pages/art/Art";
 import Admin from "./pages/admin/Admin";
+import About from "./pages/about/About";
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/admin" >
           <Admin />
+        </Route>
+        <Route exact path="/about" >
+          <About />
         </Route>
         <Route exact path="/">
           <Main />

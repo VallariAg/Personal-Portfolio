@@ -2,12 +2,14 @@
   text-align: center;
   margin: 0 16vw 2px 16vw;
   display: flex;
+  height: 100%;
   flex-direction: column;
 }
 .pages {
   position: relative;
-  /* height: 85vh; */
+  min-height: 100%;
   overflow-y: hidden;
+  flex: 1 0 auto;
 }
 @media screen and (max-width: 600px) {
   .App{

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@100&display=swap');
+
+.About {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    padding: 5% 0 5% 0;
+    text-align: right;
+    margin-left: 0;
+}
+.photo img{
+    width: 60%;
+    justify-self: right;
+    align-self: right;
+}
+.aboutContent{
+    padding-left: 10%;
+    text-align: left;
+}
+.aboutHeader {
+    font-size: 200%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aboutHeader:after {
+    content: " ";
+    border: 1px solid black;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    display: block;
+    width: 10%;
+    max-width: 100px;
+}
+
+.aboutText{
+    padding-right: 15%;
+    font-family: 'Roboto', sans-serif;
+}

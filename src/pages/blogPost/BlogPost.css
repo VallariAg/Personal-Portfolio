@@ -1,12 +1,9 @@
 .BlogPost{
     margin: 0 12vw 0 12vw;
-    /* text-align: left; */
-        /* word-wrap: ; */
 }
 .articleBody{
     text-align: left;
-  font-family: 'Open Sans', sans-serif;
-  /* font-family:  system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;; */
+    font-family: 'Open Sans', sans-serif;
     font-size: 100%;
 }
 Link, a{
@@ -26,3 +23,24 @@ Link, a{
         word-wrap: break-word;
     }
 }
+
+/* TODO: markdown CSS */
+
+/* .BlogPost h1 {
+
+}
+.BlogPost h2 {
+
+}
+.BlogPost h3 {
+
+}
+.BlogPost h4 {
+
+}
+.BlogPost h5 {
+
+}
+.BlogPost h6 {
+
+} */

@@ -11,6 +11,7 @@ let footer_style = {
     // background: "#212121",
     // background: "#ebbcbc",
     // bottom: 0,
+    flexShrink: 0,
     position: "relative",
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
