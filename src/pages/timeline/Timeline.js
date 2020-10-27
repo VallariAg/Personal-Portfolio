@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './timeline.css';
+import { useQuery, gql } from '@apollo/client';
 
 function MoreDesc(descButton, description) {
     if (descButton == "more" || descButton == "") {
@@ -32,6 +33,12 @@ function Block({ time, title, body, description }) {
     )
 }
 function Timeline() {
+    const { loading, error, data } = useQuery(TimelineQuery)
+
+    if (loading) return <p>Loading.. </p>
+    if (error) return <p> Error! </p>
+
+    // let {title, body, time, description}
     return (
         <div className="Timeline">
             <div className="blogsHeader">
@@ -40,10 +47,12 @@ function Timeline() {
             <div class="container">
                 <div class="timeline">
                     <ul>
-                        <Block time="March 2020" title="something" description="shhs" body="Some achivement idk Some achivement idkSome achivement idkSome achivement idkSome achivement idk" />
-                        <Block time="March 2030" title="something" description="shhs whaaaaaaaaaaaat" body="Some achivement idk" />
-                        <Block time="May 2000" title="birth" description="" body="worst achivement" />
-
+                        {
+                            data.allContent.map(({ id, title, body, time, description }) => {
+                                let date = new Date(parseInt(time)).toDateString();
+                                return <Block id={id} time={date} title={title} description={description} body={body} />
+                            })
+                        }
                     </ul>
                 </div>
             </div>
@@ -55,3 +64,14 @@ function Timeline() {
 export default Timeline;
 
 
+const TimelineQuery = gql`
+query show {
+    allContent {
+    id
+    time
+    title
+    body
+    description
+  }
+}
+`
