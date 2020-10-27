@@ -2,21 +2,19 @@
   display: grid;
   grid-template-columns: 1fr 6fr;
   align-items: left;
-  margin: 2vh 2vw 1vh 1vw;
-  }
-.topHeader:after {
-  content: " ";
-  border: 1px solid rgb(230, 230, 230);
-  width: 100%; 
-  margin-top: 0%;
-  margin-bottom: 15px;
-  display: block;
+  padding: 1% 0 0.2% 0;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  border-bottom:  1px solid rgb(192, 184, 184);
+  width: inherit;
 }
-  /* .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  } */
+
+.topHeader{
+  width: inherit;
+  border-bottom:  10px solid rgb(17, 17, 17);
+}
+
 .logo {
   align-self: baseline;
   width: max-content;
@@ -25,10 +23,13 @@
 }  
 .nav {
   display: grid;
-  margin-left: 23vw;
+  text-align: right;
+  justify-self: right;
+  margin-right: 2px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .nav-button{
+  text-align: center;
   padding: 2% 2% 3.5% 2%;
   justify-self: bottom;
   background-color: inherit;
@@ -37,7 +38,7 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
   font-family: monospace;
-  font-size: 1.7vh;
+  font-size: 140%;
 }
 .selectedButton{
   margin-bottom: 0px;
@@ -48,6 +49,16 @@
   display: none;
 }
 @media screen and (max-width: 1000px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    align-items: left;
+    padding: 3% 0 0.2% 0;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    width: inherit;
+  }
   .nav {
     display: none;
     content: url("./bars.svg");
@@ -59,7 +70,7 @@
     width: 23px;
     display: block;
     justify-self: right;
-    margin-right: 2px;
+    margin-right: 8%;
   }
   .menu-dialog{
     opacity: 0.85;
