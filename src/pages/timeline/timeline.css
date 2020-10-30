@@ -8,6 +8,8 @@ body {
 --orange: #EB8B6E;
 }
 .Timeline{
+  width: 100%;
+  margin: 0 auto;
 }
 .container {
   text-align: left;
@@ -71,7 +73,9 @@ body {
       font-size: 0.9em;
       padding-top: 0.25em;
     }
-    
+    .body {
+      margin-left: 2em;
+    }
     .desc {
       width: 50%;
     }

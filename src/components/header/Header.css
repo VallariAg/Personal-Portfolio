@@ -95,12 +95,13 @@
     width: 100%;
     font-size: 180%;
     font-weight: bold;
+    border: none;
   }
   .selectedButton{
-    margin-bottom: 0px;
+    /* margin-bottom: 0px; */
     font-size: 250%;
     color: white;
-    border-bottom: none;
+    border: none;
   }
 
 }

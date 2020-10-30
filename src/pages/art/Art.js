@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import "./Art.css";
-import girl from "./girl.png";
-
 import { Dialog } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
 
@@ -40,15 +38,14 @@ function Art() {
     return (
         <div>
             <div className="artHeader">
-                <img className="icon-girl" src={girl} alt="icon-girl" />
                 <h1 className="pageHeader">Art</h1>
             </div>
-            <p style={{ color: "grey" }}> All art content can also be found on my Dribbble or Instagram accounts. </p>
-            <div className="art">
+            <p style={{ color: "grey", textAlign: "center" }}> All art content can also be found on my Dribbble or Instagram accounts. </p>
+            <div className="art-container">
                 {
                     data.getArtPosts.map((fileName) => {
                         let imgURL = artServerURL + fileName;
-                        return <img className="image" id={fileName} src={imgURL} onClick={() => handleClickOpen(imgURL)} />
+                        return <div className="art-item"><img className="img" id={fileName} src={imgURL} onClick={() => handleClickOpen(imgURL)} /></div>
                     })
                 }
                 <ArtDialog image={selectedImage} open={open} onClose={handleClose} />

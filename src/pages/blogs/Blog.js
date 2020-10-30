@@ -1,8 +1,5 @@
 import React from 'react';
 import "./Blog.css";
-import girl from "./reading-girl.svg";
-// import headImg from "./try.jpg";
-// material
 import { Card, CardContent, CardMedia, CardActionArea } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
@@ -44,8 +41,9 @@ function Blog() {
     return (
         <div className="blog">
             <div className="blogsHeader">
-                <img className="icon-girl" src={girl} alt="icon-girl" />
                 <h1 className="pageHeader">Blogs</h1>
+                <p className="pageDescription">I write about technologies as I learn, and to help others understand these concepts.</p>
+                {/* <p className="pageDescription">Writing what I learn is a great way to understand the material and help others.</p> */}
             </div>
             <div className="article-container">
                 {BlogList()}

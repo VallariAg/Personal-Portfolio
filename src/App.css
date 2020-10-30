@@ -33,7 +33,7 @@
     flex-direction: column;
   }
   .pages {
-    width: 90%;
+    width: 100%;
     text-align: left;
     margin-top: 7%;
     align-self: center;
@@ -55,7 +55,7 @@
   .pages {
     width: 100%;
     text-align: left;
-    margin-top: 9%;
+    margin-top: 10%;
     align-self: center;
     position: relative;
     overflow-y: hidden;
@@ -83,7 +83,9 @@
   width: 20%;
   text-align: right;
 }
-
+.description-font{
+  font-family: 'Roboto', sans-serif;
+}
 
 @keyframes App-logo-spin {
   from {
