@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 6fr;
   align-items: left;
-  padding: 1% 0 0.2% 0;
+  padding: 1% 0 0.35% 0;
   position: fixed;
   z-index: 10;
   background-color: white;

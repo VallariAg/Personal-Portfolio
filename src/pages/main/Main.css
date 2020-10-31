@@ -1,0 +1,10 @@
+.main-page > div{
+    margin-bottom: 2rem;
+    /* background-color: rgb(184, 176, 176); */
+    /* display: grid; */
+    /* grid-template-columns: 100%; */
+}
+
+.resume-section{
+    text-align: center;
+}

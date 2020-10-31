@@ -30,16 +30,16 @@ let icon_style = {
 }
 function Footer() {
     return (<div style={footer_style}>
-        <a href="https://twitter.com/VallariAg">
+        <a href="https://twitter.com/VallariAg" target="_blank">
             <img style={icon_style} src={twitter} alt="twitter" />
         </a>
-        <a href="https://www.instagram.com/vallariag/">
+        <a href="https://www.instagram.com/vallariag/" target="_blank">
             <img style={icon_style} src={instagram} alt="instagram" />
         </a>
-        <a href="https://dribbble.com/VallariAg">
+        <a href="https://dribbble.com/VallariAg" target="_blank">
             <img style={icon_style} src={dribbble} alt="dribbble" />
         </a>
-        <a href="https://github.com/VallariAg">
+        <a href="https://github.com/VallariAg" target="_blank">
             <img style={icon_style} src={github} alt="github" />
         </a>
 

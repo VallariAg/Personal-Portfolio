@@ -1,0 +1,111 @@
+/* Header section */
+.header-section{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0;
+    padding: 0;
+    height: 40vh;
+}
+.header-txt{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+.header-img{
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    text-align: center;
+    justify-self: left;
+    align-self: center;
+}
+/* Skills section */
+.skills-section{
+    display: grid;
+    grid-row: 10px 10px 10px;
+    /* box-shadow:  0 4px 8px 0 hsla(0, 0%, 0%, 0.2); */
+    width: max-content;
+    padding: 1rem 4rem 1rem 2rem;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    /* text-align: center;     */
+}
+.skills-list{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    text-align: center;
+    justify-self: center;
+    /* flex-wrap: wrap; */
+}
+.skills-list > h2 {
+    margin-right: 3%;
+    align-self: center;
+}
+.skill-icon{
+    margin-right: 1%;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+}
+/* Projects section */
+.project-section{
+    display: grid;
+    grid-template-columns: 1fr 0.02fr 1fr 0.02fr 1fr;
+    grid-gap: 3%;
+    margin: 0 auto;
+    width: 92%;
+}
+.bar-divider{
+    content: ' ';
+    height: 100%;
+    margin-top: 4%;
+    width: 1px;
+    background-color: rgb(218, 214, 214);
+    align-self: center;
+    display: block;
+}
+.project-item{
+    padding: 0;
+    display: grid;
+    width: 100%;
+    grid-template-rows: 2fr 0.2fr 0.7fr;
+}
+.project-imgs {
+    width: 100%;
+    margin-bottom: 2%;
+    align-self: center;
+    /* box-shadow:  0 4px 8px 0 hsla(0, 0%, 0%, 0.2); */
+}
+
+/* Blogs section */
+.blogs-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+}
+.blog-item{
+    padding: 0 10%;
+}
+.slider{
+    display: none;
+}
+/* Contact Page */
+.contact-section{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 60%;
+    margin: 0 auto;
+    height: 80px;
+    min-height: 50px;
+    align-content: center;
+}
+.contact-icon{
+    justify-self: center;
+}
+.contact-info{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-content: center;
+    justify-content: center;
+}

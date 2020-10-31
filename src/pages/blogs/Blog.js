@@ -42,7 +42,7 @@ function Blog() {
         <div className="blog">
             <div className="blogsHeader">
                 <h1 className="pageHeader">Blogs</h1>
-                <p className="pageDescription">I write about technologies as I learn, and to help others understand these concepts.</p>
+                <p className="pageDescription">I write about technologies to learn, and to help others understand these concepts.</p>
                 {/* <p className="pageDescription">Writing what I learn is a great way to understand the material and help others.</p> */}
             </div>
             <div className="article-container">
