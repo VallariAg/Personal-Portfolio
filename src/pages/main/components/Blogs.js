@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./components.css";
 import useViewPort from "./../../../hooks/useViewport"
 import { Link } from "react-router-dom";
 import Carousel from "./../../../components/carousel/Carousel"
 import Paper from '@material-ui/core/Paper';
+
 
 function Blog() {
     return (
@@ -44,11 +45,14 @@ function displayBlog(width) {
     }
 }
 function Blogs() {
-    const { width, height } = useViewPort();
+    const { width } = useViewPort();
 
     return (
-        <div>
-            <h2 style={{ padding: "0" }}>Some blogs I wrote</h2>
+        <div style={{ display: "block" }}>
+            <div style={{ padding: "2rem 0" }}>
+                <h2 className="section-head">Blogs</h2>
+            </div>
+            {/* <h2 style={{ padding: "0" }}>Some blogs I wrote</h2> */}
             <p>I love to write as I learn, and to help others understand stuff. Hit 100+ views on "Time Complexity" blog in a week!</p>
             {displayBlog(width)}
             <p style={{ textAlign: "right" }}> <Link to="/blog" >Checkout all by blogs → </Link></p>

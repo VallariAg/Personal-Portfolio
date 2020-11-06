@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@100&display=swap');
 
 .About {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    padding: 5% 0 5% 0;
-    text-align: right;
-    margin-left: 0;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1.5fr; */
+    /* padding: 0% 0 5% 0; */
+    text-align: center;
+    /* margin-left: 0; */
+    width: 55%;
+    min-width: 800px;
+    margin: 0 auto;
+   
 }
 .photo img{
     width: 100%;
@@ -13,25 +17,124 @@
     align-self: right;
 }
 .aboutContent{
-    padding-left: 10%;
-    text-align: left;
+    /* padding-left: 10%; */
+    text-align: center;
+    
 }
 .aboutHeader {
-    font-size: 200%;
-    font-family: 'Poppins', sans-serif;
+    font-size: 3vh;
+    font-family: monospace;
+    text-align: center;
+    /* font-size: 200%;
+    font-family: 'Poppins', sans-serif; */
 }
 
-.aboutHeader:after {
+/* .aboutHeader:after {
     content: " ";
     border: 1px solid black;
     margin-top: 2px;
     margin-bottom: 15px;
     display: block;
-    width: 10%;
+    width: 100%;
     max-width: 100px;
-}
+} */
 
 .aboutText{
     padding-right: 15%;
     font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    width: 100%;
+    /* display: grid; */
+    /* grid-template-columns: 1fr; */
+    justify-items: center;
+
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.875rem;
+    letter-spacing: .00625rem;
+    font-variant-ligatures: none;
+}
+/* .about-container {
+    margin: 0 auto;
+} */
+
+.art-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-right: 0;
+}
+.art-img > img {
+    align-self: center;
+    justify-self: center;
+    min-height: 160px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    height: 10vw;
+    object-fit: fill;
+}
+.about-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto;
+    height: 100%;
+}
+.about-item h2 {
+    font-size: inherit;
+    font-weight: 900;
+}
+.about-item a{
+    color: #1a73e8;
+}
+.about-item > img {
+    margin: 0 auto;
+    display: block;
+    height: 200px;
+    object-fit: fill;
+}
+.about-item > p {
+    background: white;
+    text-align: left;
+    margin: 0;
+    padding: 0px 1rem;
+
+    font-size: 1.125rem;
+}
+.books > img {
+    height: 90%;
+    min-height: 200px;
+}
+@media screen and (max-width: 1000px) {
+    .About {
+        width: 98%;
+    min-width: 300px;
+    }
+    .art-img > img{
+        min-height: 20vw;
+    }
+    .aboutText{
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.625rem;
+        letter-spacing: .00625rem;
+        font-variant-ligatures: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wtef{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .books {
+        display: flex;
+        flex-direction: column;
+    }
+    .books > img {
+        height: 200px;
+    }
 }

@@ -40,7 +40,7 @@ function Timeline() {
 
     return (
         <div className="Timeline">
-            <div className="blogsHeader">
+            <div className="timelineHeader">
                 <h1 className="pageHeader">Timeline </h1>
             </div>
             <div class="container">

@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import bars from './bars.svg';
+import logo from "./va.jpg";
 import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
 import { Dialog } from "@material-ui/core"
@@ -35,24 +36,25 @@ function Header() {
         setOpen(false);
     };
     return (
-        <div className="topHeader sticky">
-            <div className="header">
-                <Link className="logo" to="/">
-                    Vallari Agrawal
-                </Link>
-                <nav className="nav">
-                    {NavButtons()}
-                </nav>
-                <nav className="nav-menu">
-                    <img src={bars} onClick={handleClickOpen} />
-                    <Dialog fullScreen open={open} onClose={handleClose} className="menu-dialog">
-                        <nav className="nav-menu-options">
-                            {NavButtons()}
-                            <img src={closeButton} style={{ height: "20%" }} className="nav-button" onClick={handleClose} />
-                        </nav>
-                    </Dialog>
-                </nav>
-            </div>
+        // <div className="">
+        <div className="header">
+            <Link className="logo" to="/">
+                <img style={{ height: "30px" }} src={logo} />
+                {/* Vallari Agrawal */}
+            </Link>
+            <nav className="nav">
+                {NavButtons()}
+            </nav>
+            <nav className="nav-menu">
+                <img src={bars} onClick={handleClickOpen} />
+                <Dialog fullScreen open={open} onClose={handleClose} className="menu-dialog">
+                    <nav className="nav-menu-options">
+                        {NavButtons()}
+                        <img src={closeButton} style={{ height: "20%" }} className="nav-button" onClick={handleClose} />
+                    </nav>
+                </Dialog>
+            </nav>
+            {/* </div> */}
         </div>);
 }
 
