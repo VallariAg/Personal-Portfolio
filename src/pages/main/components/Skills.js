@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./components.css"
 // icons
 import react from "./../media/react.svg"
 import nodejs from "./../media/nodejs.svg"
@@ -16,6 +16,7 @@ import socketio from "./../media/socket-io.svg"
 function Skills() {
     return (
         <div className="skills-section">
+            <h2 className="sectionHeader">Technologies I've worked with</h2>
             <div className="skills-list">
                 {/* <h2>Technologies</h2> */}
                 {/* <p>Technologies I LOVE and work with:</p> */}

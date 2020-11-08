@@ -85,6 +85,9 @@ Link, a{
     font-family: 'Poppins', sans-serif;
     /* font-size: 2.1rem; */
 }
+.articleBody a {
+    color: #1a73e8;
+}
 .articleBody > blockquote {
     font-family: 'Space Grotesk', sans-serif;
     /* font-family: 'Philosopher', sans-serif; */

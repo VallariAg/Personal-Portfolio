@@ -17,8 +17,8 @@ function Main() {
             <Header />
             <Blogs />
             <Project />
-            <Achivement />
             <Skills />
+            <Achivement />
             <div className="resume-section">
 
                 <Button variant="outlined" target="_blank" href="https://drive.google.com/file/d/1CD3ZKeCaaRuCH0bWfoQbPIoVbnzZzT7x/view"> RESUME </Button>

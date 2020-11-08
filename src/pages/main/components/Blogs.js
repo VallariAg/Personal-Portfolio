@@ -49,11 +49,10 @@ function Blogs() {
 
     return (
         <div style={{ display: "block" }}>
-            <div style={{ padding: "2rem 0" }}>
-                <h2 className="section-head">Blogs</h2>
+            <div>
+                <h2 className="sectionHeader">Blogs</h2>
             </div>
-            {/* <h2 style={{ padding: "0" }}>Some blogs I wrote</h2> */}
-            <p>I love to write as I learn, and to help others understand stuff. Hit 100+ views on "Time Complexity" blog in a week!</p>
+            <p style={{ textAlign: "center" }}>I love to write as I learn, and to help others understand stuff. Hit 100+ views on "Time Complexity" blog in a week!</p>
             {displayBlog(width)}
             <p style={{ textAlign: "right" }}> <Link to="/blog" >Checkout all by blogs → </Link></p>
         </div>)

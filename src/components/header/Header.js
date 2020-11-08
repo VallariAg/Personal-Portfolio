@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import bars from './bars.svg';
-import logo from "./va.jpg";
+import logo from "./val.jpg";
 import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
 import { Dialog } from "@material-ui/core"
@@ -39,8 +39,8 @@ function Header() {
         // <div className="">
         <div className="header">
             <Link className="logo" to="/">
-                <img style={{ height: "30px" }} src={logo} />
-                {/* Vallari Agrawal */}
+                {/* <img style={{ height: "30px" }} src={logo} /> */}
+                Vallari Agrawal
             </Link>
             <nav className="nav">
                 {NavButtons()}

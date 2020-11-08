@@ -4,7 +4,6 @@ import linkedIn from "./../media/linkedin.svg"
 import mail from "./../media/mail.svg"
 import location from "./../media/location.svg"
 
-
 function DisplayAContact({ icon, link, txt }) {
     return (
         <a className="contact-info" href={link} target="_blank">

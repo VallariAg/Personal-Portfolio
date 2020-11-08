@@ -104,8 +104,8 @@ function Project() {
     };
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ padding: "2rem 0" }}>
-                <h2 className="section-head">Projects</h2>
+            <div>
+                <h2 className="sectionHeader">Projects</h2>
             </div>
             <div className="project-section">
                 <ProjectCard handleClickOpen={handleClickOpen} id={1} />

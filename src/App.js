@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -19,27 +19,34 @@ function App() {
     <div className="App">
       <Header />
       <div className="pages">
-        <Route exact path="/timeline" >
-          <Timeline />
-        </Route>
-        <Route exact path="/blog" >
-          <Blog />
-        </Route>
-        <Route path="/blog/:id" >
-          <BlogPost />
-        </Route>
-        <Route exact path="/art" >
-          <Art />
-        </Route>
-        <Route exact path="/admin" >
-          <Admin />
-        </Route>
-        <Route exact path="/about" >
-          <About />
-        </Route>
-        <Route exact path="/">
-          <Main />
-        </Route>
+        <Switch>
+          <Route exact path="/timeline" >
+            <Timeline />
+          </Route>
+          <Route exact path="/blog" >
+            <Blog />
+          </Route>
+          <Route path="/blog/:id" >
+            <BlogPost />
+          </Route>
+          <Route exact path="/art" >
+            <Art />
+          </Route>
+          <Route exact path="/admin" >
+            <Admin />
+          </Route>
+          <Route exact path="/about" >
+            <About />
+          </Route>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route>
+            <p> Error 404!</p>
+            <img style={{ height: "30%" }} src="https://thumbs.gfycat.com/IckyBossyHarvestmen-size_restricted.gif" />
+            <p><a href="/"> > Go back to home</a></p>
+          </Route>
+        </Switch>
       </div>
       <Footer />
     </div>
