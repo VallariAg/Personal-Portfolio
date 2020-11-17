@@ -120,7 +120,7 @@ function Project() {
             <div>
                 <h2 className="sectionHeader">Projects</h2>
             </div>
-            <p style={{ textAlign: "center" }}>I love to write as I learn, and to help others understand stuff. Hit 100+ views on "Time Complexity" blog in a week!</p>
+            <p style={{ textAlign: "center" }}>Here are some of exciting projects I've worked on.</p>
             <div className="project-section">
                 <ProjectCard handleClickOpen={handleClickOpen} id={1} />
                 <ProjectCard handleClickOpen={handleClickOpen} id={2} />

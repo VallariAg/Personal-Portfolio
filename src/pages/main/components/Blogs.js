@@ -1,10 +1,32 @@
 import React from "react";
 import "./components.css";
-import useViewPort from "./../../../hooks/useViewport"
 import { Link } from "react-router-dom";
-// import Carousel from "./../../../components/carousel/Carousel"
-import Paper from '@material-ui/core/Paper';
 import { Card, CardContent, CardMedia, CardActionArea } from '@material-ui/core';
+import { useQuery, gql } from '@apollo/client';
+
+const BlogQuery = gql`
+    query GETBlogQuery($id: Int!) {
+      post(id: $id){
+        title
+        description
+        id
+        createdAt
+      }
+    }
+    `;
+function BlogItem({ id }) {
+    let { loading, error, data } = useQuery(BlogQuery, { variables: { id: parseInt(id) } });
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error!</p>
+
+    return (<BlogCard
+        title={data.post.title}
+        description={data.post.description}
+        id={id}
+        createdAt={data.post.createdAt}
+    />)
+}
 
 function BlogCard({ title, description, id, createdAt }) {
     const serverURL = process.env.REACT_APP_SERVER_URL;
@@ -27,47 +49,8 @@ function BlogCard({ title, description, id, createdAt }) {
         </Link>
     )
 }
-// function Blog() {
-//     return (
-//         <div className="blog-item" style={{ width: "90%" }}>
-//             <h3>Blog Heading</h3>
-//             <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>
-//         </div>)
-// }
 
-
-const data = [
-    (<Paper><div className="blog-item">
-        <h3>Blog Heading</h3>
-        <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>
-    </div></Paper>)
-    ,
-    (<Paper><div className="blog-item">
-        <h3>Blog Heading</h3>
-        <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>
-    </div></Paper>),
-    (<Paper><div className="blog-item">
-        <h3>Blog Heading</h3>
-        <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>
-    </div></Paper>)
-]
-function displayBlog(width) {
-    // if (width < 800) {
-    //     return (<div className="blogs-section">
-    //         <Carousel data={data} />
-    //     </div>)
-
-    // } else {
-    return (<div className="blogs-section">
-        <BlogCard title="Time" description="something" id="1" createdAt="1605617193195" />
-        <BlogCard title="Time" description="something" id="1" createdAt="1605617193195" />
-        <BlogCard title="Time" description="something" id="1" createdAt="1605617193195" />
-        {/* {Blog()} */}
-    </div>)
-    // }
-}
 function Blogs() {
-    const { width } = useViewPort();
 
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -75,7 +58,11 @@ function Blogs() {
                 <h2 className="sectionHeader">Blogs</h2>
             </div>
             <p style={{ textAlign: "center" }}>I love to write as I learn, and to help others understand stuff. Hit 100+ views on "Time Complexity" blog in a week!</p>
-            {displayBlog(width)}
+            <div className="blogs-section">
+                <BlogItem id="1" />
+                <BlogItem id="2" />
+                {/* <BlogItem id="3" /> */}
+            </div>
             <p style={{ textAlign: "center" }}> <Link to="/blog" >Checkout all by blogs → </Link></p>
         </div>)
 }
