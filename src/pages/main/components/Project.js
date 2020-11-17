@@ -2,14 +2,23 @@ import React, { useState } from "react";
 import "./components.css";
 // import useViewPort from "./../../../hooks/useViewport"
 // import Carousel from "./../../../components/carousel/Carousel"
-import { Dialog, DialogTitle, Button } from '@material-ui/core';
+import { Dialog, DialogTitle, Button, Card, CardHeader, Typography, CardActions, CardContent, Avatar, CardMedia } from '@material-ui/core';
 
 const ProjectData = {
     0: "",
+    // 1: {
+    //     title: "Gallery-App",
+    //     body: "A Progressive Web App to display your images in a gallery, made with Angular.",
+    //     description: "I wanted to create a place to show and record illustrations I created. An image gallery. Things I learned while making this: Angular, Lazy-loading",
+    //     date: "",
+    //     avatar: "GA",
+    //     img: "https://raw.githubusercontent.com/VallariAg/Gallery-library/master/demo.png",
+    //     link: "https://github.com/VallariAg/Gallery-library",
+    // },    
     1: {
-        title: "Gallery-App",
-        body: "A Progressive Web App to display your images in a gallery, made with Angular.",
-        description: "I wanted to create a place to show and record illustrations I created. An image gallery. Things I learned while making this: Angular, Lazy-loading",
+        title: "Portfolio Website",
+        body: "Portfolio portfolio. Made with React, Node, Express, Apollo GraphQL, Mikro ORM, PostgreSQL, and deployed it on AWS EC2 instance with Nginx.",
+        description: "Psst.. it's the website you're seeing this!",
         date: "",
         avatar: "GA",
         img: "https://raw.githubusercontent.com/VallariAg/Gallery-library/master/demo.png",
@@ -58,36 +67,40 @@ function SimpleDialog({ onClose, selectedValue, open }) {
 }
 
 function ProjectCard({ id, handleClickOpen }) {
-    return (
-        <div className="project-item" style={{ width: "90%" }} onClick={() => handleClickOpen(id)} target="_blank">
-            <img className="project-icon" src={ProjectData[id]["img"]} alt="project" />
-            <h3>{ProjectData[id]["title"]}</h3>
-            <p style={{ color: "grey" }}> {ProjectData[id]["body"]} </p>
-        </div>
-    )
     // return (
-    //     <Card className="project-item">
-    //         <CardHeader
-    //             avatar={
-    //                 <Avatar>
-    //                     {ProjectData[id]["avatar"]}
-    //                 </Avatar>
-    //             }
-    //             title={ProjectData[id]["title"]}
-    //             subheader={ProjectData[id]["date"]}
-    //         />
-    //         <CardContent>
-    //             <Typography variant="body2" color="textSecondary" component="p">
-    //                 {ProjectData[id]["body"]}
-    //             </Typography>
-    //         </CardContent>
-    //         <CardActions>
-    //             <Button size="small" onClick={() => handleClickOpen(id)}>
-    //                 Learn More
-    //                 </Button>
-    //         </CardActions>
-    //     </Card>
+    //     <div className="project-item" style={{ width: "90%" }} onClick={() => handleClickOpen(id)} target="_blank">
+    //         <img className="project-icon" src={ProjectData[id]["img"]} alt="project" />
+    //         <h3>{ProjectData[id]["title"]}</h3>
+    //         <p style={{ color: "grey" }}> {ProjectData[id]["body"]} </p>
+    //     </div>
     // )
+    return (
+        <Card className="project-item">
+            <CardHeader
+                avatar={
+                    <Avatar>
+                        {ProjectData[id]["avatar"]}
+                    </Avatar>
+                }
+                title={ProjectData[id]["title"]}
+                subheader={ProjectData[id]["date"]}
+            />
+            <CardMedia
+                // className=""
+                image={ProjectData[id]["img"]}
+            />
+            <CardContent>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    {ProjectData[id]["body"]}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small" onClick={() => handleClickOpen(id)}>
+                    Learn More
+                    </Button>
+            </CardActions>
+        </Card>
+    )
 }
 function Project() {
     const [open, setOpen] = useState(false);
@@ -107,13 +120,14 @@ function Project() {
             <div>
                 <h2 className="sectionHeader">Projects</h2>
             </div>
+            <p style={{ textAlign: "center" }}>I love to write as I learn, and to help others understand stuff. Hit 100+ views on "Time Complexity" blog in a week!</p>
             <div className="project-section">
                 <ProjectCard handleClickOpen={handleClickOpen} id={1} />
                 <ProjectCard handleClickOpen={handleClickOpen} id={2} />
                 <ProjectCard handleClickOpen={handleClickOpen} id={3} />
             </div>
             <SimpleDialog onClose={handleClose} selectedValue={selectedValue} open={open} />
-            <a href="https://github.com/VallariAg" target="_blank" rel="noopener noreferrer"><p style={{ textAlign: "right" }}> Checkout other projects on Github →</p></a>
+            <a href="https://github.com/VallariAg" target="_blank" rel="noopener noreferrer"><p style={{ textAlign: "center" }}> Checkout other projects on Github →</p></a>
         </div>)
 }
 

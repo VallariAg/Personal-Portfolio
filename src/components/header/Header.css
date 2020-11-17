@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Fredericka+the+Great');
 .header {
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -7,21 +8,26 @@
   position: fixed;
   z-index: 10;
   background-color: white;
-  border-bottom:  1px solid rgb(192, 184, 184);
+  /* border-bottom:  1px solid rgb(192, 184, 184); */
+  border-bottom:  2px solid rgba(23, 42, 58, .1);
   width: 100%;
   /* margin: 0 auto; */
   /* justify-self: center; */
   /* text-align: center; */
+  /* box-shadow: 0px 0px 12px #00000029; */
   top: 0;
 }
 
 
 .logo {
+  /* font-family: 'Fredericka the Great', cursive; */
+  font-family: 'Great Vibes', cursive;
+  font-size: 150%;
   align-self: baseline;
   width: max-content;
   /* padding-top: 2%; */
   padding-left: 2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }  
 .nav {
   display: grid;
@@ -66,10 +72,6 @@
   .nav {
     display: none;
     content: url("./bars.svg");
-  }
-  .logo{
-  padding-left: 0;
-  text-align: center;
   }
   .nav-menu {
     width: 23px;

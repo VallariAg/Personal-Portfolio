@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import './timeline.css';
 import { useQuery, gql } from '@apollo/client';
+import ReactMarkdown from 'react-markdown';
 
 function MoreDesc(descButton, description) {
-    if (descButton == "more" || descButton == "") {
+    if (descButton === "more" || descButton === "") {
         return ""
     }
     else {
-        return <p className="moreDesc">{description}</p>
+        return <p className="moreDesc">
+            <ReactMarkdown
+                source={description}
+            />
+        </p>
     }
 }
 function Block({ time, title, body, description }) {
@@ -25,7 +30,7 @@ function Block({ time, title, body, description }) {
                 {MoreDesc(descButton, description)}
                 <button
                     className="descButton"
-                    onClick={() => { (descButton == "more") ? setdescButton("less") : setdescButton("more") }}>
+                    onClick={() => { (descButton === "more") ? setdescButton("less") : setdescButton("more") }}>
                     {descButton}
                 </button>
             </div>
@@ -48,7 +53,9 @@ function Timeline() {
                     <ul>
                         {
                             data.allContent.map(({ id, title, body, time, description }) => {
-                                let date = new Date(parseInt(time)).toDateString();
+                                let date = new Date(parseInt(time));
+                                date = `${date.toLocaleString('default', { month: 'long' })} ${date.getUTCFullYear()}`
+                                // let date = new Date(parseInt(time)).toDateString();
                                 return <Block id={id} time={date} title={title} description={description} body={body} />
                             })
                         }

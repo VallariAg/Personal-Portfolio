@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import bars from './bars.svg';
-import logo from "./val.jpg";
 import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
 import { Dialog } from "@material-ui/core"
@@ -36,7 +35,6 @@ function Header() {
         setOpen(false);
     };
     return (
-        // <div className="">
         <div className="header">
             <Link className="logo" to="/">
                 {/* <img style={{ height: "30px" }} src={logo} /> */}
@@ -46,15 +44,14 @@ function Header() {
                 {NavButtons()}
             </nav>
             <nav className="nav-menu">
-                <img src={bars} onClick={handleClickOpen} />
+                <img alt="menu-icon" src={bars} onClick={handleClickOpen} />
                 <Dialog fullScreen open={open} onClose={handleClose} className="menu-dialog">
                     <nav className="nav-menu-options">
                         {NavButtons()}
-                        <img src={closeButton} style={{ height: "20%" }} className="nav-button" onClick={handleClose} />
+                        <img src={closeButton} style={{ height: "2rem" }} alt="close-btn" className="nav-button" onClick={handleClose} />
                     </nav>
                 </Dialog>
             </nav>
-            {/* </div> */}
         </div>);
 }
 

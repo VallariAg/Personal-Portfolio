@@ -2,6 +2,8 @@ import React from "react";
 import "./About.css";
 import { Button } from "@material-ui/core";
 
+const artServerURL = process.env.REACT_APP_SERVER_URL + "/art";
+
 function About() {
 
     return (
@@ -44,9 +46,9 @@ const aboutText = <p className="about-container">
                 I love doodling. Now, I'm doing the highly emotional process of actually learning how to draw. There are so many people on Instagram and Dribbble whose works I try to learn from like <a href="https://dribbble.com/IvanDubovik">Ivan Dubovik</a>, <a href="https://www.instagram.com/yeahyeahmaybe/">yeahyeahmaybe</a> and moreee.
             </p>
             <div className="art-img">
-                <img alt="art" src="http://localhost:4000/art/3.png" />
-                <img alt="art" src="http://localhost:4000/art/1.jpg" />
-                <img alt="art" src="http://localhost:4000/art/2.png" />
+                <img alt="art" src={`${artServerURL}/3.png`} />
+                <img alt="art" src={`${artServerURL}/1.jpg`} />
+                <img alt="art" src={`${artServerURL}/2.png`} />
             </div>
         </p>
 

@@ -23,7 +23,7 @@ const ReadingProgress = ({ target }) => {
     const [readingProgress, setReadingProgress] = useState(0);
     const scrollListener = () => {
         if (!target.current) {
-            return;
+            return null;
         }
 
         const element = target.current;
@@ -39,6 +39,7 @@ const ReadingProgress = ({ target }) => {
         }
 
         setReadingProgress((windowScrollTop / totalHeight) * 100);
+        return null;
     };
 
     useEffect(() => {

@@ -3,22 +3,23 @@ import "./components.css"
 import { Paper } from '@material-ui/core';
 import star from "./../media/star.svg";
 
-const paperStyle = {
-    padding: "2%",
-}
-const container = {
-    display: "grid",
-    gridTemplateRows: "1fr 1fr 1fr",
-    width: "30%",
-    // justifySelf: "right"
-}
+const data = [
+    {
+        title: "Women TechMakers Engineering Fellow",
+        body: "Selected among the top 126 participants across India for Women Techmakers Engineering Fellow, a 2 year professional training program by TalentSprint, supported by Google."
+    },
+    {
+        title: "Developer Student Club Team Member",
+        body: "Became Development Team Member of DSC-BVP. Developer Student Clubs are university based community groups for students interested in Google developer technologies.",
+    },
+]
 
-function Achivement() {
-    return (<div className="achive-item">
-
-        <h2><img style={{ height: "20px" }} src={star} alt="star-icon" /> WTEF</h2>
-        <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</h4>
-    </div>)
+function Achivement({ title, body }) {
+    return (
+        <div className="achive-item">
+            <h2><img style={{ height: "20px" }} src={star} alt="star-icon" /> {title}</h2>
+            <h4>{body}</h4>
+        </div>)
 }
 
 function Achivements() {
@@ -26,9 +27,9 @@ function Achivements() {
         <div>
             <h1 className="sectionHeader">Achivements</h1>
         </div>
-        <Achivement />
-        <Achivement />
-        <Achivement />
+        {
+            data.map(({ title, body }) => (<Achivement title={title} body={body} />))
+        }
         <a href="/timeline"><p style={{ textAlign: "right" }}> Checkout other milestones →</p></a>
 
     </div>)

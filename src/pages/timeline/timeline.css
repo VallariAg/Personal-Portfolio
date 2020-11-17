@@ -18,10 +18,15 @@ body {
 }
 .container {
   text-align: left;
-  width: 90%;
+  max-width: 900px;
   overflow: hidden;
   margin: 30px auto 0;
   font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 110%;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .00625rem;
 }
 .timeline{
   height: 100%;

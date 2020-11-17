@@ -10,9 +10,9 @@ function BlogList() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error!</p>
 
-    return data.posts.map(({ id, title, description, createdAt }) => (
-        <BlogCard title={title} description={description} id={id} createdAt={createdAt} />
-    ));
+    return data.posts.map(({ id, title, description, createdAt }) => {
+        return <BlogCard title={title} description={description} id={id} createdAt={createdAt} />
+    });
 }
 
 function BlogCard({ title, description, id, createdAt }) {
