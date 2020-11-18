@@ -9,16 +9,15 @@
     font-family: 'Poppins', sans-serif;
 }
 .articleBody{
-    text-align: justify;
     font-family: 'Open Sans', sans-serif;
     /* font-size: 100%; */
     font-size: 1.125rem;
-
-    font-weight: 400;
+    /* font-size: 20px; */
+    /* font-weight: 400;
     font-style: normal;
     line-height: 1.75rem;
     letter-spacing: .00625rem;
-    font-variant-ligatures: none;
+    font-variant-ligatures: none; */
 }
 Link, a{
     color: rgb(83, 80, 80);
@@ -41,7 +40,6 @@ Link, a{
         width: 98%;
         min-width: 300px;
     }
- 
 }
 
 /* @media (max-width: 700px) {
@@ -56,18 +54,21 @@ Link, a{
 
 /* TODO: markdown CSS */
 .articleBody {
-    /* font-family: 'Poppins', sans-serif; */
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-size: 1rem; */
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 .articleBody h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.7rem;
-    /* margin: 0; */
 }
 .articleBody h2 {
     font-family: 'Poppins', sans-serif;
-    /* margin: 0; */
     font-size: 2.3rem;
 }
 .articleBody h3 {
@@ -84,7 +85,6 @@ Link, a{
 }
 .articleBody h6 {
     font-family: 'Poppins', sans-serif;
-    /* font-size: 2.1rem; */
 }
 .articleBody a {
     color: #1a73e8;

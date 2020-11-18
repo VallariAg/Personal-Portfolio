@@ -24,7 +24,7 @@ function BlogPost() {
     <>
       <ReadingProgress className="sticky-progresss" target={readingTarget} />
       <div className="BlogPost" ref={readingTarget}>
-        <div style={{ fontSize: "5vh" }}>{title}</div>
+        <div style={{ fontSize: "5vh", marginTop: "2%" }}>{title}</div>
         <p style={{ color: "grey", fontSize: "80%", margin: 0 }}>{createdAt}</p>
         <ReactMarkdown
           className="articleBody"

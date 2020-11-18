@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
+import Bio from "./components/Bio";
 import Achivement from "./components/Achivement";
 // material UI
 import { Button } from '@material-ui/core';
@@ -15,9 +16,10 @@ function Main() {
     return (
         <div className="main-page">
             <Header />
+            <Bio />
             <Blogs />
+            {/* <Skills /> */}
             <Project />
-            <Skills />
             <Achivement />
             <div className="resume-section">
 

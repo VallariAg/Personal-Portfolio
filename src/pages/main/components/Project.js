@@ -27,7 +27,7 @@ const ProjectData = {
     2: {
         title: "Fake News Classifier",
         body: "My first Machine Learning project, a Fake News Identification model, and a chrome extension that uses the model to classify news articles online as fake or fact.",
-        description: "Wanting to explore the domain of Machine Learning, we (me and my two other friends) came across a paper 'Fake News Detection by Stanford University, in 2017', which proposed a way to build a model to verify if a given news content is real or fake. We built our model following the paper, then made a chrome extension to use it on news articles online. The model requires a lot of improvement which can be achieved by feeding it more diverse kind of input dataset to train. Python's sklearn and pandas library was used to train the model, Flask to make server API, and React to make the extension's front-end.",
+        description: <p><p>Wanting to explore the domain of Machine Learning, we (me and my two other friends) came across a paper 'Fake News Detection by Stanford University, in 2017', which proposed a way to build a model to verify if a given news content is real or fake. </p> <p> We built our model following the paper, then made a chrome extension to use it on news articles online. The model requires a lot of improvement which can be achieved by feeding it more diverse kind of input dataset to train. </p> <p> Python's sklearn and pandas library was used to train the model, Flask to make server API, and React to make the extension's front-end.</p></p>,
         date: "",
         avatar: "FN",
         img: "https://i.imgur.com/TB0kgtq.png",

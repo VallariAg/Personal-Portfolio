@@ -28,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy": "scp -i ../portfolio-server.pem -r build ubuntu@ec2-54-227-135-46.compute-1.amazonaws.com:/var/www/vallariag.dev/portfolio/",
     "build:staging": "env-cmd -f .env npm run build"
   },
   "eslintConfig": {

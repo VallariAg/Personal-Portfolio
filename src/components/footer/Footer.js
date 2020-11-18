@@ -15,8 +15,9 @@ let footer_style = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     padding: "1% 15% 0% 15%",
+    margin: "0 auto",
     marginTop: "1px",
-    // width: "80%"
+    width: "50%"
 }
 let icon_style = {
     // background: "#111",
@@ -32,20 +33,20 @@ function Footer() {
     return (
         <>
             <div style={footer_style}>
-                <a href="https://twitter.com/VallariAg" target="_blank">
+                <a href="https://twitter.com/VallariAg" rel="noopener noreferrer" target="_blank">
                     <img style={icon_style} src={twitter} alt="twitter" />
                 </a>
-                <a href="https://www.instagram.com/vallariag/" target="_blank">
+                <a href="https://www.instagram.com/vallariag/" rel="noopener noreferrer" target="_blank">
                     <img style={icon_style} src={instagram} alt="instagram" />
                 </a>
-                <a href="https://dribbble.com/VallariAg" target="_blank">
+                <a href="https://dribbble.com/VallariAg" rel="noopener noreferrer" target="_blank">
                     <img style={icon_style} src={dribbble} alt="dribbble" />
                 </a>
-                <a href="https://github.com/VallariAg" target="_blank">
+                <a href="https://github.com/VallariAg" rel="noopener noreferrer" target="_blank">
                     <img style={icon_style} src={github} alt="github" />
                 </a>
             </div>
-            <p>Created by Vallari Agrawal | © 2020 All rights reserved.</p>
+            <p style={{ color: "grey" }}>Created by Vallari Agrawal | © 2020 All rights reserved.</p>
         </>)
 }
 export default Footer;
