@@ -1,7 +1,7 @@
 import React from "react";
 import "./components.css";
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardMedia, CardActionArea } from '@material-ui/core';
+import { Card, CardContent, CardMedia, CardActionArea, CardHeader } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
 
 const BlogQuery = gql`
@@ -36,10 +36,11 @@ function BlogCard({ title, description, id, createdAt }) {
 
     return (
         <Link className="Card blog-item" style={{ textDecoration: 'none', height: "100%" }} to={"/blog/" + id}>
-            <Card style={{ height: "100%" }}>
+            <Card style={{ height: "100%", }}>
                 <CardActionArea>
                     <CardMedia className="ArticleImg" image={headImg} title={title} />
                     <CardContent className="cardContent">
+                        {/* <CardHeader title={title} /> */}
                         <p className="titles">{title}</p>
                         <p className="description">{description}</p>
                         <p className="createdAt">{date.toDateString()}</p>

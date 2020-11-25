@@ -4,7 +4,7 @@ import "./Main.css";
 import Header from "./components/Header";
 import Blogs from "./components/Blogs";
 import Projects from "./components/Projects";
-import Project from "./components/Project";
+import Project from "./components/Project2";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import Bio from "./components/Bio";

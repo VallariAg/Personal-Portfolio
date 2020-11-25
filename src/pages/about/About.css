@@ -44,15 +44,15 @@
     font-family: 'Roboto', sans-serif;
     text-align: justify;
     width: 100%;
+    font-size: 20px;
     /* display: grid; */
     /* grid-template-columns: 1fr; */
     justify-items: center;
-
-    font-weight: 400;
+    /* font-weight: 400;
     font-style: normal;
     line-height: 1.875rem;
     letter-spacing: .00625rem;
-    font-variant-ligatures: none;
+    font-variant-ligatures: none; */
 }
 /* .about-container {
     margin: 0 auto;
@@ -100,7 +100,12 @@
     margin: 0;
     padding: 0px 1rem;
 
-    font-size: 1.125rem;
+    /* font-size: 1.125rem; */
+    font-size: 21px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.75rem;
+    letter-spacing: .00625rem;
 }
 .books > img {
     height: 90%;
@@ -126,6 +131,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .about-item > p {
+    font-size: 18px;
+    }
     .wtef{
         display: flex;
         flex-direction: column-reverse;

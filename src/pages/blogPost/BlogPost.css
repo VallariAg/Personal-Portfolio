@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .BlogPost{
     min-width: 800px;
@@ -9,15 +10,10 @@
     font-family: 'Poppins', sans-serif;
 }
 .articleBody{
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
     /* font-size: 100%; */
-    font-size: 1.125rem;
-    /* font-size: 20px; */
-    /* font-weight: 400;
-    font-style: normal;
-    line-height: 1.75rem;
-    letter-spacing: .00625rem;
-    font-variant-ligatures: none; */
+    /* font-size: 1.225rem; */
+    
 }
 Link, a{
     color: rgb(83, 80, 80);
@@ -42,19 +38,14 @@ Link, a{
     }
 }
 
-/* @media (max-width: 700px) {
-    .BlogPost{
-        width: 100%;
-        margin: 0 auto;
-        word-wrap: break-word;
-    }
-  
-} */
+
 
 
 /* TODO: markdown CSS */
 .articleBody {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif; */
+    /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Roboto', sans-serif; */
     /* font-size: 1rem; */
     display: block;
@@ -62,6 +53,11 @@ Link, a{
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-size: 20px;
+    /* font-weight: 400; */
+    font-style: normal;
+    line-height: 1.75rem;
+    letter-spacing: .00625rem;    
 }
 .articleBody h1 {
     font-family: 'Poppins', sans-serif;
@@ -69,15 +65,16 @@ Link, a{
 }
 .articleBody h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
 }
 .articleBody h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 .articleBody h4 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    color: rgb(61, 59, 59);
 }
 .articleBody h5 {
     font-family: 'Poppins', sans-serif;
@@ -90,9 +87,14 @@ Link, a{
     color: #1a73e8;
 }
 .articleBody > blockquote {
-    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    color: rgb(95, 92, 92);
+    margin-left: 2%;
+    /* font-family: 'Space Grotesk', sans-serif; */
     /* font-family: 'Philosopher', sans-serif; */
     font-size: 1.2rem;
+    border-left: 4px solid rgb(182, 176, 176);
+    padding-left: 1%;
 }
 /* .articleBody strong {
     font-weight: 500;
@@ -100,9 +102,23 @@ Link, a{
 .articleBody em {
 
 } */
-.articleBody code {
+/* .articleBody code {
     font-family: monospace;
-}
-.articleBody pre {
+    background-color: var(--light-grey);
+    padding: 0 2px;
+} */
+/* .articleBody pre {
     overflow: scroll;
+} */
+
+
+@media (max-width: 700px) {
+    /* .BlogPost{
+        width: 100%;
+        margin: 0 auto;
+        word-wrap: break-word;
+    } */
+    .articleBody {
+        font-size: 18px;
+    }
 }

@@ -3,9 +3,13 @@ import "./BlogPost.css";
 import CodeBlock from "./CodeBlock";
 
 import ReactMarkdown from 'react-markdown';
+import RemarkMathPlugin from 'remark-math';
+import gfm from 'remark-gfm'
+import { BlockMath, InlineMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
+
 import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-
 import ReadingProgress from "./ReadingProgress";
 
 function BlogPost() {
@@ -29,7 +33,20 @@ function BlogPost() {
         <ReactMarkdown
           className="articleBody"
           source={body}
-          renderers={{ code: ({ language, value }) => <CodeBlock language={language} code={value} /> }}
+          transformImageUri={uri =>
+            uri.startsWith("http") ? uri : `${process.env.REACT_APP_SERVER_URL}/blog/${id}/${uri}`
+          }
+          escapeHtml="false"
+          plugins={[
+            RemarkMathPlugin,
+            gfm
+          ]}
+          renderers={{
+            code: ({ language, value }) => <CodeBlock language={language} code={value} />,
+            math: ({ value }) => <BlockMath>{value}</BlockMath>,
+            inlineMath: ({ value }) => <InlineMath>{value}</InlineMath>,
+            image: ({ alt, src, title }) => (<img alt={alt} src={src} title={title} style={{ margin: "0 auto", display: "block" }} />)
+          }}
         />
       </div>
     </>

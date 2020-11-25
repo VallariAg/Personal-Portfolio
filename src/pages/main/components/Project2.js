@@ -1,20 +1,9 @@
 import React, { useState } from "react";
 import "./components.css";
-// import useViewPort from "./../../../hooks/useViewport"
-// import Carousel from "./../../../components/carousel/Carousel"
 import { Dialog, DialogTitle, Button, Card, CardHeader, Typography, CardActions, CardContent, Avatar, CardMedia } from '@material-ui/core';
 
 const ProjectData = {
     0: "",
-    // 1: {
-    //     title: "Gallery-App",
-    //     body: "A Progressive Web App to display your images in a gallery, made with Angular.",
-    //     description: "I wanted to create a place to show and record illustrations I created. An image gallery. Things I learned while making this: Angular, Lazy-loading",
-    //     date: "",
-    //     avatar: "GA",
-    //     img: "https://raw.githubusercontent.com/VallariAg/Gallery-library/master/demo.png",
-    //     link: "https://github.com/VallariAg/Gallery-library",
-    // },    
     1: {
         title: "Portfolio Website",
         body: "Portfolio portfolio. Made with React, Node, Express, Apollo GraphQL, Mikro ORM, PostgreSQL, and deployed it on AWS EC2 instance with Nginx.",
@@ -65,15 +54,37 @@ function SimpleDialog({ onClose, selectedValue, open }) {
         </Dialog>
     )
 }
-
+const cardStyle = {
+    "project-item": {
+        width: "90%",
+        display: "grid",
+        gridTemplateColumns: "1fr 3fr"
+    },
+    "project-icon": {
+        height: "100px",
+        justifySelf: "center",
+        alignSelf: "center",
+        margin: "12px"
+    },
+    "project-section": {
+        maxWidth: "900px",
+        display: "block",
+        margin: "0 auto",
+    },
+}
 function ProjectCard({ id, handleClickOpen }) {
-    // return (
-    //     <div className="project-item" style={{ width: "90%" }} onClick={() => handleClickOpen(id)} target="_blank">
-    //         <img className="project-icon" src={ProjectData[id]["img"]} alt="project" />
-    //         <h3>{ProjectData[id]["title"]}</h3>
-    //         <p style={{ color: "grey" }}> {ProjectData[id]["body"]} </p>
-    //     </div>
-    // )
+    return (
+        <div className="project-item" style={cardStyle["project-item"]} onClick={() => handleClickOpen(id)} target="_blank">
+            <img style={cardStyle["project-icon"]} src={ProjectData[id]["img"]} alt="project" />
+            <div>
+                <h3>{ProjectData[id]["title"]}</h3>
+                <p style={{ color: "grey", marginTop: 0 }}> {ProjectData[id]["body"]} </p>
+                <Button size="small" onClick={() => handleClickOpen(id)}>
+                    Learn More
+                </Button>
+            </div>
+        </div>
+    )
 
 
     // avatar={
@@ -81,29 +92,29 @@ function ProjectCard({ id, handleClickOpen }) {
     //         {ProjectData[id]["avatar"]}
     //     </Avatar>
     // }
-    return (
-        <Card className="project-item">
-            <CardHeader
-                title={ProjectData[id]["title"]}
-                subheader={ProjectData[id]["date"]}
-            />
-            <CardMedia
-                // style={{ height: "30vw" }}
-                className="project-item-img"
-                image={ProjectData[id]["img"]}
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {ProjectData[id]["body"]}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small" onClick={() => handleClickOpen(id)}>
-                    Learn More
-                    </Button>
-            </CardActions>
-        </Card>
-    )
+    // return (
+    //     <Card className="project-item">
+    //         <CardHeader
+    //             title={ProjectData[id]["title"]}
+    //             subheader={ProjectData[id]["date"]}
+    //         />
+    //         <CardMedia
+    //             // style={{ height: "30vw" }}
+    //             className="project-item-img"
+    //             image={ProjectData[id]["img"]}
+    //         />
+    //         <CardContent>
+    //             <Typography variant="body2" color="textSecondary" component="p">
+    //                 {ProjectData[id]["body"]}
+    //             </Typography>
+    //         </CardContent>
+    //         <CardActions>
+    //             <Button size="small" onClick={() => handleClickOpen(id)}>
+    //                 Learn More
+    //                 </Button>
+    //         </CardActions>
+    //     </Card>
+    // )
 }
 function Project() {
     const [open, setOpen] = useState(false);
@@ -124,7 +135,7 @@ function Project() {
                 <h2 className="sectionHeader">Projects</h2>
             </div>
             <p style={{ textAlign: "center" }}>Here are some of exciting projects I've worked on.</p>
-            <div className="project-section">
+            <div style={cardStyle["project-section"]}>
                 <ProjectCard handleClickOpen={handleClickOpen} id={1} />
                 <ProjectCard handleClickOpen={handleClickOpen} id={2} />
                 <ProjectCard handleClickOpen={handleClickOpen} id={3} />

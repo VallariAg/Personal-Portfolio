@@ -63,7 +63,7 @@
     display: grid;
     grid-template-columns: 1fr 6fr;
     align-items: left;
-    padding: 3% 0 0.2% 0;
+    padding: 2% 0 1.2% 0;
     position: fixed;
     z-index: 10;
     background-color: white;
