@@ -27,6 +27,7 @@ const aboutText = <p className="about-container">
         <p>
 
             <p>Hello, I'm Vallari!</p>
+
             I'm currently in my second year of college in Bharti Vidyapeeth, Delhi (India).
         </p>
     </div>
@@ -65,7 +66,7 @@ const aboutText = <p className="about-container">
         <p>
             <h2>Books</h2>
             <p>
-                I basically grew up with Harry Potter series and it's kind of a ritual, for me and <a href="https://shraddhaag.dev/">my sister</a>, to reread them during/before exams. My favourate in non-fiction is <a href="https://www.goodreads.com/book/show/81939.The_Mastery_of_Love">"Mastery of Love"</a>.  I've recently finished <a href="https://www.goodreads.com/book/show/19063.The_Book_Thief">"The Book Theif"</a> which I think is one of the best out there. 100/100 would recommend.
+                I basically grew up with Harry Potter series and it's kind of a ritual, for me and <a href="https://shraddhaag.dev/">my sister</a>, to reread them during/before exams. My favourate in non-fiction is <a href="https://www.goodreads.com/book/show/81939.The_Mastery_of_Love">"Mastery of Love"</a>.  I've recently finished <a href="https://www.goodreads.com/book/show/19063.The_Book_Thief">"The Book Theif"</a>, which is a beautiful book about a young girl in Nazi Germany. Checkout what I'm currently reading on <a href="https://www.goodreads.com/user/show/59977353-vallari-agrawal">GoodReads</a>. 
            </p>
         </p>
         <img alt="books" src="https://prodimage.images-bn.com/pimages/9781101934180_p0_v3_s1200x630.jpg" />
@@ -84,9 +85,9 @@ const aboutText = <p className="about-container">
         <p>
             <h2> Women Techmakers</h2>
             <p>
-                <p>In March 2020, I got selected for <a href="https://wtef.talentsprint.com/">Women Techmakers Engineering Fellow</a> scholarship program. Being part of this program has taught me to to write good, clean, readable code, learn how-to-learn, thinking in a team, etc. I've some of the best mentors here to guide me and the amazing community of 124 women of my age.                </p>
+                <p>In March 2020, I got selected for <a href="https://wtef.talentsprint.com/">Women Techmakers Engineering Fellow</a> scholarship program. Being part of this program has taught me to to write good, clean, readable code, learn how-to-learn, thinking in a team, etc. I've some of the best mentors here to guide me and the most amazing community of 124 women of my age.                </p>
 
-                <p>We had an Immersion Week last August, where we got to interact with 30+ Googlers and sessions from personal to career development. It was the most amazing week and I got to learnt a lot about becoming a good computer engineer in that week. </p>
+                <p>We had an Immersion Week last August, where we got to interact with 30+ Googlers for sessions from personal to career development. It was the most amazing week and I got to learnt a lot about becoming a good computer engineer in that week. </p>
             </p>
         </p>
     </div>

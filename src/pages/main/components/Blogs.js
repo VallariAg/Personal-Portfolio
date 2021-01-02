@@ -1,7 +1,7 @@
 import React from "react";
 import "./components.css";
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardMedia, CardActionArea, CardHeader } from '@material-ui/core';
+import { Card, CardContent, CardMedia, CardActionArea } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
 
 const BlogQuery = gql`

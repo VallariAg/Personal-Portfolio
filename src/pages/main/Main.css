@@ -1,10 +1,5 @@
 .main-page > div{
-    /* margin-bottom: 1rem; */
-    /* border: 1px solid rgba(131, 133, 134, 0.28); */
     padding: 1rem;
-    /* background-color: rgb(184, 176, 176); */
-    /* display: grid; */
-    /* grid-template-columns: 100%; */
 
     font-weight: 400;
     font-style: normal;
@@ -12,24 +7,9 @@
     letter-spacing: .00625rem;
     font-variant-ligatures: none;
 
-    /* animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;  */
-    /* animation-fill-mode: forwards; */
-    /* transform: scaleX(0);
-    transition-property: all; */
-    /* transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
-    transition-timing-function: ease, ease, ease, ease;
-    transition-delay: 0s, 0s, 0s, 0s; */
-     /* font-size: 100%; */
+   
 }
-@keyframes fadeInAnimation { 
-    0% { 
-        transform: translateY(10%);
-    } 
-    100% { 
-        transform: translateY(0%);
-     } 
-} 
+
 .resume-section{
     text-align: center;
 }

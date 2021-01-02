@@ -23,10 +23,8 @@ function Achivement({ title, body, image }) {
             <img src={image} alt="icon" />
             <div>
                 <h4 style={{ color: "black" }}>
-                    {/* <img style={{ height: "18px" }} src={star} alt="star-icon" />  */}
                     {title}
                 </h4>
-                {/* <h2><img style={{ height: "20px" }} src={star} alt="star-icon" /> {title}</h2> */}
                 <h4>{body}</h4>
             </div>
         </div>)

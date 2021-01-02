@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
 
 .BlogPost{
     min-width: 800px;
@@ -54,7 +55,7 @@ Link, a{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-size: 20px;
-    /* font-weight: 400; */
+    /* font-weight: 200; */
     font-style: normal;
     line-height: 1.75rem;
     letter-spacing: .00625rem;    
@@ -94,7 +95,7 @@ Link, a{
     /* font-family: 'Philosopher', sans-serif; */
     font-size: 1.2rem;
     border-left: 4px solid rgb(182, 176, 176);
-    padding-left: 1%;
+    padding-left: 1rem;
 }
 /* .articleBody strong {
     font-weight: 500;

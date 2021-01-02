@@ -108,7 +108,7 @@
     letter-spacing: .00625rem;
 }
 .books > img {
-    height: 90%;
+    /* height: 90%; */
     max-height: 200px;
 }
 @media screen and (max-width: 1000px) {

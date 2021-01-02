@@ -12,14 +12,11 @@ import apollo from "./../media/apollo-graphql.svg"
 import angular from "./../media/angular.svg"
 import socketio from "./../media/socket-io.svg"
 
-// function Icons() {}
 function Skills() {
     return (
         <div className="skills-section">
             <h2 className="sectionHeader">Technologies I've worked with</h2>
             <div className="skills-list">
-                {/* <h2>Technologies</h2> */}
-                {/* <p>Technologies I LOVE and work with:</p> */}
                 <img className="skill-icon" src={javascript} />
                 <img className="skill-icon" src={typescript} />
                 <img className="skill-icon" src={graphql} />

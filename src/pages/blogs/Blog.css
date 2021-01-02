@@ -75,7 +75,6 @@
         grid-template-columns: 1fr;
         row-gap: 3%;
         width: 90%;
-        /* margin: 4vh 10vw 7vh 10vw; */
         min-height: 0;
         align-items: center;
         justify-items: center;
@@ -97,7 +96,6 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 2%;
-        /* margin: 4vh 6px 7vh 6px; */
         align-items: center;
         justify-items: center;
         min-height: 0;

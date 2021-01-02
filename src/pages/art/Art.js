@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "./Art.css";
 import { Dialog } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
@@ -15,8 +15,8 @@ function ArtDialog(props) {
 }
 
 function Art() {
-    const [open, setopen] = React.useState(false);
-    const [selectedImage, setselectedImage] = React.useState("");
+    const [open, setopen] = useState(false);
+    const [selectedImage, setselectedImage] = useState("");
 
     let { loading, error, data } = useQuery(ArtPOstQuery);
 

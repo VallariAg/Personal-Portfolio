@@ -10,8 +10,8 @@ const ProjectData = {
         description: "Psst.. it's the website you're seeing this!",
         date: "Oct 2020",
         avatar: "1",
-        img: "https://raw.githubusercontent.com/VallariAg/Gallery-library/master/demo.png",
-        link: "https://github.com/VallariAg/Gallery-library",
+        img: "https://raw.githubusercontent.com/VallariAg/Gallery-library/master/demo.pn",
+        link: "https://github.com/VallariAg/Personal-Portfolio",
     },
     2: {
         title: "Fake News Classifier",
@@ -39,9 +39,6 @@ function SimpleDialog({ onClose, selectedValue, open }) {
     return (
         <Dialog onClose={onClose} aria-labelledby="simple-dialog-title" open={open}>
             <DialogTitle className="dialog-title">
-                {/* <Avatar alt="project" >
-                    {ProjectData[selectedValue]["avatar"]}
-                </Avatar> */}
                 {ProjectData[selectedValue]["title"]}
             </DialogTitle>
 
@@ -49,7 +46,6 @@ function SimpleDialog({ onClose, selectedValue, open }) {
                 <img className="project-dialog-imgs" alt="img" src={ProjectData[selectedValue]["img"]} />
                 <div className="project-dialog-txt"> {ProjectData[selectedValue]["description"]}</div>
                 <Button variant="contained" className="project-dialog-btn" href={ProjectData[selectedValue]["link"]} target="_blank">PROJECT LINK</Button>
-                {/* <h4 className="project-dialog-descp">{ProjectData[selectedValue]["description"]}</h4> */}
             </div>
         </Dialog>
     )
@@ -78,7 +74,7 @@ function ProjectCard({ id, handleClickOpen }) {
             <img style={cardStyle["project-icon"]} src={ProjectData[id]["img"]} alt="project" />
             <div>
                 <h3>{ProjectData[id]["title"]}</h3>
-                <p style={{ color: "grey", marginTop: 0 }}> {ProjectData[id]["body"]} </p>
+                <p style={{ color: "gray", marginTop: 0 }}> {ProjectData[id]["body"]} </p>
                 <Button size="small" onClick={() => handleClickOpen(id)}>
                     Learn More
                 </Button>
@@ -86,35 +82,6 @@ function ProjectCard({ id, handleClickOpen }) {
         </div>
     )
 
-
-    // avatar={
-    //     <Avatar>
-    //         {ProjectData[id]["avatar"]}
-    //     </Avatar>
-    // }
-    // return (
-    //     <Card className="project-item">
-    //         <CardHeader
-    //             title={ProjectData[id]["title"]}
-    //             subheader={ProjectData[id]["date"]}
-    //         />
-    //         <CardMedia
-    //             // style={{ height: "30vw" }}
-    //             className="project-item-img"
-    //             image={ProjectData[id]["img"]}
-    //         />
-    //         <CardContent>
-    //             <Typography variant="body2" color="textSecondary" component="p">
-    //                 {ProjectData[id]["body"]}
-    //             </Typography>
-    //         </CardContent>
-    //         <CardActions>
-    //             <Button size="small" onClick={() => handleClickOpen(id)}>
-    //                 Learn More
-    //                 </Button>
-    //         </CardActions>
-    //     </Card>
-    // )
 }
 function Project() {
     const [open, setOpen] = useState(false);

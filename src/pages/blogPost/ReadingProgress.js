@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import "./BlogPost.css";
 
 const BorderLinearProgress = withStyles((theme) => ({
@@ -49,8 +49,6 @@ const ReadingProgress = ({ target }) => {
     return (<div className="sticky-progress BlogPost">
         <BorderLinearProgress className="sticky-progresss" variant="determinate" value={readingProgress} />
     </div>)
-    // return <LinearProgress color="#000" style={{ position: "fixed", marginTop: "0%", zIndex: "1000", height: "3px", width: "50%" }} variant="determinate" value={readingProgress} />
-    // return <div style={{width: `${readingProgress}%`}} />;
 };
 
 export default ReadingProgress;

@@ -6,15 +6,6 @@ import { Dialog, DialogTitle, Button, Card, CardHeader, Typography, CardActions,
 
 const ProjectData = {
     0: "",
-    // 1: {
-    //     title: "Gallery-App",
-    //     body: "A Progressive Web App to display your images in a gallery, made with Angular.",
-    //     description: "I wanted to create a place to show and record illustrations I created. An image gallery. Things I learned while making this: Angular, Lazy-loading",
-    //     date: "",
-    //     avatar: "GA",
-    //     img: "https://raw.githubusercontent.com/VallariAg/Gallery-library/master/demo.png",
-    //     link: "https://github.com/VallariAg/Gallery-library",
-    // },    
     1: {
         title: "Portfolio Website",
         body: "Portfolio portfolio. Made with React, Node, Express, Apollo GraphQL, Mikro ORM, PostgreSQL, and deployed it on AWS EC2 instance with Nginx.",
@@ -50,9 +41,6 @@ function SimpleDialog({ onClose, selectedValue, open }) {
     return (
         <Dialog onClose={onClose} aria-labelledby="simple-dialog-title" open={open}>
             <DialogTitle className="dialog-title">
-                {/* <Avatar alt="project" >
-                    {ProjectData[selectedValue]["avatar"]}
-                </Avatar> */}
                 {ProjectData[selectedValue]["title"]}
             </DialogTitle>
 
@@ -60,27 +48,12 @@ function SimpleDialog({ onClose, selectedValue, open }) {
                 <img className="project-dialog-imgs" alt="img" src={ProjectData[selectedValue]["img"]} />
                 <div className="project-dialog-txt"> {ProjectData[selectedValue]["description"]}</div>
                 <Button variant="contained" className="project-dialog-btn" href={ProjectData[selectedValue]["link"]} target="_blank">PROJECT LINK</Button>
-                {/* <h4 className="project-dialog-descp">{ProjectData[selectedValue]["description"]}</h4> */}
             </div>
         </Dialog>
     )
 }
 
 function ProjectCard({ id, handleClickOpen }) {
-    // return (
-    //     <div className="project-item" style={{ width: "90%" }} onClick={() => handleClickOpen(id)} target="_blank">
-    //         <img className="project-icon" src={ProjectData[id]["img"]} alt="project" />
-    //         <h3>{ProjectData[id]["title"]}</h3>
-    //         <p style={{ color: "grey" }}> {ProjectData[id]["body"]} </p>
-    //     </div>
-    // )
-
-
-    // avatar={
-    //     <Avatar>
-    //         {ProjectData[id]["avatar"]}
-    //     </Avatar>
-    // }
     return (
         <Card className="project-item">
             <CardHeader
@@ -88,7 +61,6 @@ function ProjectCard({ id, handleClickOpen }) {
                 subheader={ProjectData[id]["date"]}
             />
             <CardMedia
-                // style={{ height: "30vw" }}
                 className="project-item-img"
                 image={ProjectData[id]["img"]}
             />

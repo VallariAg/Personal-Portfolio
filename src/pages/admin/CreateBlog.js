@@ -15,7 +15,6 @@ const inputStyle = {
 }
 
 function CreateBlog() {
-  // const [ID, setID] = useState()
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [body, setBody] = useState("")
@@ -33,8 +32,7 @@ function CreateBlog() {
       }
       } >
         <div style={formStyle}>
-          {/* <input type="text" value={id} /> */}
-                Title: <input style={inputStyle} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          Title: <input style={inputStyle} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                 Description: <input style={inputStyle} type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                 Body: <textarea style={inputStyle} value={body} onChange={(e) => setBody(e.target.value)} />
         </div>
