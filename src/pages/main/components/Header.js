@@ -9,7 +9,7 @@ function Header() {
                 <div style={{ fontSize: "300%" }}>Hi, I'm Vallari!</div>
                 <p>A student</p>
             </div>
-            <img className="header-img" src={myImage} />
+            <img alt="header" className="header-img" src={myImage} />
         </div>)
 }
 

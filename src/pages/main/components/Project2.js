@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./components.css";
-import { Dialog, DialogTitle, Button, Card, CardHeader, Typography, CardActions, CardContent, Avatar, CardMedia } from '@material-ui/core';
+import { Dialog, DialogTitle, Button } from '@material-ui/core';
 import portfolioImg from "./../media/vallario.png"
 const ProjectData = {
     0: "",

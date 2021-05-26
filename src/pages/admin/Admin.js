@@ -10,7 +10,7 @@ import EditBlog from "./EditBlog";
 function verfiyPassword(input_password, real_password) {
     const hash = crypto.createHash('sha256');
     input_password = hash.update(input_password).digest("hex");
-    return input_password == real_password;
+    return input_password === real_password;
 }
 
 function Admin() {

@@ -8,7 +8,7 @@ function ArtDialog(props) {
     const { image, open, onClose } = props
     return (
         <Dialog open={open} onClose={onClose}>
-            <img className="dialog-img" src={image} />
+            <img alt="art" className="dialog-img" src={image} />
         </Dialog>
     )
 }

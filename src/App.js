@@ -43,7 +43,7 @@ function App() {
           </Route>
           <Route>
             <p> Error 404!</p>
-            <img style={{ height: "30%" }} src="https://thumbs.gfycat.com/IckyBossyHarvestmen-size_restricted.gif" />
+            <img alt="error" style={{ height: "30%" }} src="https://thumbs.gfycat.com/IckyBossyHarvestmen-size_restricted.gif" />
             <p><a href="/"> > Go back to home</a></p>
           </Route>
         </Switch>

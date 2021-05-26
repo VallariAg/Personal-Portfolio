@@ -2,8 +2,6 @@ import React from "react";
 import "./About.css";
 import { Button } from "@material-ui/core";
 
-const artServerURL = process.env.REACT_APP_SERVER_URL + "/art";
-
 function About() {
 
     return (

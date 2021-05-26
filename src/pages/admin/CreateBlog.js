@@ -19,7 +19,7 @@ function CreateBlog() {
   const [id, setId] = useState("")
   const [description, setDescription] = useState("")
   const [body, setBody] = useState("")
-  const [insert_blogs, { _ }] = useMutation(CreatePostQuery);
+  const [insert_blogs] = useMutation(CreatePostQuery);
 
   return (
     <div>

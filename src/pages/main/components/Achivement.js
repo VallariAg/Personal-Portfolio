@@ -1,6 +1,5 @@
 import React from "react";
 import "./components.css"
-import { Paper } from '@material-ui/core';
 // import star from "./../media/star.svg";
 import { Link } from "react-router-dom";
 

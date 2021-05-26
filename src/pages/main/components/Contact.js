@@ -6,8 +6,8 @@ import location from "./../media/location.svg"
 
 function DisplayAContact({ icon, link, txt }) {
     return (
-        <a className="contact-info" href={link} target="_blank">
-            <div className="contact-icon"><img src={icon} style={{ height: "90%" }} /></div>
+        <a className="contact-info" href={link} rel="noopener noreferrer" target="_blank">
+            <div className="contact-icon"><img alt="contact icon" src={icon} style={{ height: "90%" }} /></div>
             <div className="link">{txt}</div>
         </a>)
 }
