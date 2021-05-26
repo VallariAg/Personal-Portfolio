@@ -62,7 +62,7 @@ function Timelines() {
             </div>
             <Timeline align={width > 800 ? "alternate" : "left"}>
                 {
-                    data.allContent.map(({ id, title, body, time, description }) => {
+                    data.timeline.map(({ id, title, body, time, description }) => {
                         let date = new Date(parseInt(time));
                         date = `${date.toLocaleString('default', { month: 'long' })} ${date.getUTCFullYear()}`
                         // let date = new Date(parseInt(time)).toDateString();
@@ -81,7 +81,7 @@ export default Timelines;
 
 const TimelineQuery = gql`
 query show {
-    allContent {
+    timeline {
     id
     time
     title

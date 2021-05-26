@@ -21,7 +21,7 @@ function Admin() {
     if (loading) return <p>Loading server...</p>;
     if (error) return <p>Error in loading server!</p>
 
-    const real_password = data.getPassword;
+    const real_password = data.login[0].password;
 
 
     if (!loggedIn) {
@@ -54,7 +54,9 @@ function Admin() {
 export default Admin;
 
 const passwordQuery = gql`
-{
-  getPassword
+query MyQuery {
+  login {
+    password
+  }
 }
 `

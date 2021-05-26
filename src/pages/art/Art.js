@@ -3,7 +3,6 @@ import "./Art.css";
 import { Dialog } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
 
-const artServerURL = process.env.REACT_APP_SERVER_URL + "/art/";
 
 function ArtDialog(props) {
     const { image, open, onClose } = props
@@ -43,9 +42,9 @@ function Art() {
             <p style={{ color: "grey", textAlign: "center" }}> All art content can also be found on my Dribbble or Instagram accounts. </p>
             <div className="art-container">
                 {
-                    data.getArtPosts.map((fileName) => {
-                        let imgURL = artServerURL + fileName;
-                        return <div className="art-item"><img className="img" id={fileName} src={imgURL} onClick={() => handleClickOpen(imgURL)} /></div>
+                    data.art.map((artPost) => {
+                        let imgURL = artPost.link;
+                        return <div className="art-item"><img className="img" alt={artPost.artTitle} id={artPost.artTitle} src={imgURL} onClick={() => handleClickOpen(imgURL)} /></div>
                     })
                 }
                 <ArtDialog image={selectedImage} open={open} onClose={handleClose} />
@@ -59,7 +58,10 @@ function Art() {
 export default Art;
 
 const ArtPOstQuery = gql`
-query getArtPosts {
-    getArtPosts
+query MyQuery {
+  art {
+    link
+    artTitle
+  }
 }
 `;

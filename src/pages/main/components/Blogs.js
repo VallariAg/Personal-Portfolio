@@ -5,32 +5,35 @@ import { Card, CardContent, CardMedia, CardActionArea } from '@material-ui/core'
 import { useQuery, gql } from '@apollo/client';
 
 const BlogQuery = gql`
-    query GETBlogQuery($id: Int!) {
-      post(id: $id){
-        title
-        description
-        id
-        createdAt
-      }
-    }
+query MyQuery($id: Int) {
+  blogs(where: {id: {_eq: $id}}) {
+    title
+    id
+    description
+    createdAt
+    imgHead
+  }
+}
     `;
 function BlogItem({ id }) {
     let { loading, error, data } = useQuery(BlogQuery, { variables: { id: parseInt(id) } });
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error!</p>
-
+    
+    console.log(data)
+    data = data.blogs[0]
+    console.log(data)
     return (<BlogCard
-        title={data.post.title}
-        description={data.post.description}
+        title={data.title}
+        description={data.description}
         id={id}
-        createdAt={data.post.createdAt}
+        createdAt={data.createdAt}
+        imgHead={data.imgHead}
     />)
 }
 
-function BlogCard({ title, description, id, createdAt }) {
-    const serverURL = process.env.REACT_APP_SERVER_URL;
-    const headImg = `${serverURL}/blog/${id}/${id}.jpg`; //TODO: for all image formats /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i
+function BlogCard({ title, description, id, createdAt, imgHead }) {
 
     let date = new Date(parseInt(createdAt));
 
@@ -38,7 +41,7 @@ function BlogCard({ title, description, id, createdAt }) {
         <Link className="Card blog-item" style={{ textDecoration: 'none', height: "100%" }} to={"/blog/" + id}>
             <Card style={{ height: "100%", }}>
                 <CardActionArea>
-                    <CardMedia className="ArticleImg" image={headImg} title={title} />
+                    <CardMedia className="ArticleImg" image={imgHead} title={title} />
                     <CardContent className="cardContent">
                         {/* <CardHeader title={title} /> */}
                         <p className="titles">{title}</p>

@@ -8,8 +8,8 @@ const ProjectData = {
     0: "",
     1: {
         title: "Portfolio Website",
-        body: "Portfolio portfolio. Made with React, Node, Express, Apollo GraphQL, Mikro ORM, PostgreSQL, and deployed it on AWS EC2 instance with Nginx.",
-        description: "Psst.. it's the website you're seeing this!",
+        body: "Portfolio portfolio. Made with React, Node, Express, Apollo GraphQL, MikroORM, PostgreSQL, and deployed it on AWS EC2 instance with Nginx.",
+        description: <p><p>Yes, it's the website you are on!</p><p>Wanting to explore some more tools of web development, I decided to make the backend of this project with Typescript. Used PostgreSQL database with MikroORM, Apollo GraphQL, and Express to design an API.</p><p>Used React and Material UI to build it's frontend.</p><p>Deployed the API and the frontend on an AWS instance with Nginx. Used Ansible to automate the deployment process.</p></p>,
         date: "Oct 2020",
         avatar: "1",
         img: "https://raw.githubusercontent.com/VallariAg/Gallery-library/master/demo.png",

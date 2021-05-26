@@ -47,9 +47,9 @@ const aboutText = <p className="about-container">
                 I love doodling. Now, I'm doing the highly emotional process of actually learning how to draw. There are so many people on Instagram and Dribbble whose works I try to learn from like <a href="https://dribbble.com/IvanDubovik">Ivan Dubovik</a>, <a href="https://www.instagram.com/yeahyeahmaybe/">yeahyeahmaybe</a> and moreee.
             </p>
             <div className="art-img">
-                <img alt="art" src={`${artServerURL}/3.png`} />
-                <img alt="art" src={`${artServerURL}/1.jpg`} />
-                <img alt="art" src={`${artServerURL}/2.png`} />
+                <img alt="art" src="https://cdn.dribbble.com/users/3763816/screenshots/14209073/housedotseverywhereartboard_1_72x.png" />
+                <img alt="art" src="https://pbs.twimg.com/media/EsUF6NRUUAMzsUn?format=jpg&name=4096x4096" />
+                <img alt="art" src="https://pbs.twimg.com/media/EgYB4VrU4AAMyt_?format=jpg&name=large" />
             </div>
         </p>
 

@@ -16,22 +16,24 @@ const inputStyle = {
 
 function CreateBlog() {
   const [title, setTitle] = useState("")
+  const [id, setId] = useState("")
   const [description, setDescription] = useState("")
   const [body, setBody] = useState("")
-  const [addPost, { data }] = useMutation(CreatePostQuery);
+  const [insert_blogs, { _ }] = useMutation(CreatePostQuery);
 
   return (
     <div>
       <form onSubmit={(e) => {
         console.log(body);
         e.preventDefault();
-        addPost({ variables: { title, body, description } });
+        insert_blogs({ variables: { title, body, description, id: parseInt(id) } });
         setTitle("");
         setBody("");
         setDescription("");
       }
       } >
         <div style={formStyle}>
+          Id: <input style={inputStyle} type="text" value={id} onChange={(e) => setId(e.target.value)} />
           Title: <input style={inputStyle} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                 Description: <input style={inputStyle} type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                 Body: <textarea style={inputStyle} value={body} onChange={(e) => setBody(e.target.value)} />
@@ -44,11 +46,14 @@ function CreateBlog() {
 export default CreateBlog;
 
 const CreatePostQuery = gql`
-mutation addPost($title: String!, $body: String!, $description: String!) {
-  createPost(title: $title, body: $body, description: $description) {
-    id
-    title
-    createdAt
+mutation MyQuery($title: String, $body: String, $description: String, $id: Int) {
+  insert_blogs(objects: {body: $body, id: $id, title: $title, description: $description}) {
+    returning {
+      createdAt
+      description
+      title
+    }
   }
 }
+
 `

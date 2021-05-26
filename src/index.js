@@ -8,7 +8,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_SERVER_URL + '/graphql',
+  uri: process.env.REACT_APP_SERVER_URL,
+  headers: {
+    'x-hasura-admin-secret': process.env.HASURA_SECRET
+  },
   cache: new InMemoryCache()
 });
 ReactDOM.render(

@@ -10,22 +10,20 @@ function BlogList() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error!</p>
 
-    return data.posts.map(({ id, title, description, createdAt }) => {
-        return <BlogCard title={title} description={description} id={id} createdAt={createdAt} />
+    return data.blogs.map(({ id, title, description, createdAt, imgHead }) => {
+        return <BlogCard title={title} description={description} id={id} createdAt={createdAt} imgHead={imgHead} />
     });
 }
 
-function BlogCard({ title, description, id, createdAt }) {
-    const serverURL = process.env.REACT_APP_SERVER_URL;
-    const headImg = `${serverURL}/blog/${id}/${id}.jpg`; //TODO: for all image formats /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i
-
-    let date = new Date(parseInt(createdAt));
+function BlogCard({ title, description, id, createdAt, imgHead }) {
+    
+    let date = new Date(createdAt);
 
     return (
         <Link className="Card" style={{ textDecoration: 'none', height: "100%" }} to={"/blog/" + id}>
             <Card style={{ height: "100%" }}>
                 <CardActionArea>
-                    <CardMedia className="ArticleImg" image={headImg} title={title} />
+                    <CardMedia className="ArticleImg" image={imgHead} title={title} />
                     <CardContent className="cardContent">
                         <p className="titles">{title}</p>
                         <p className="description">{description}</p>
@@ -57,11 +55,12 @@ export default Blog;
 
 const AllBlogQuery = gql`
 query getAllBlogs {
-        posts {
-        title 
-        id
-        description
-        createdAt
+        blogs {
+            title
+            id
+            description
+            createdAt
+            imgHead
     }
 }
 `;

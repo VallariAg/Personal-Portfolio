@@ -14,10 +14,11 @@ const inputStyle = {
 }
 function EditBlog() {
     const [id, setID] = useState(0)
+    const [imgHead, setImgHead] = useState("")
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [body, setBody] = useState("")
-    const [updatePost] = useMutation(UpdatePostQuery);
+    const [update_blogs] = useMutation(UpdatePostQuery);
 
 
     return (
@@ -26,15 +27,17 @@ function EditBlog() {
                 e.preventDefault();
                 console.log(body);
 
-                updatePost({ variables: { title, body, description, id: parseInt(id) } });
+                update_blogs({ variables: { title, body, description, id: parseInt(id), imgHead } });
                 setTitle("");
                 setBody("");
                 setDescription("");
+                setImgHead("");
             }
             }>
                 <div style={formStyle}>
 
-                    ID: <input style={inputStyle} type="number" value={id} onChange={(e) => setID(e.target.value)} />
+                Header Image: <input style={inputStyle} type="text" value={imgHead} onChange={(e) => setImgHead(e.target.value)} />
+                ID: <input style={inputStyle} type="number" value={id} onChange={(e) => setID(e.target.value)} />
                 Title: <input style={inputStyle} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                 Description: <input style={inputStyle} type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                 Body: <textarea style={inputStyle} value={body} onChange={(e) => setBody(e.target.value)} />
@@ -48,11 +51,14 @@ function EditBlog() {
 export default EditBlog;
 
 const UpdatePostQuery = gql`
-mutation updatePost($id: Float!, $title: String!, $body: String!, $description: String!) {
-    updatePost(id: $id ,title: $title, body: $body, description: $description) {
-    id
-    title
-    createdAt
+mutation MyQuery($id: Int, $title: String, $body: String, $description: String, $imgHead: String) {
+  update_blogs(where: {id: {_eq: $id}}, _set: {body: $body, description: $description, imgHead: $imgHead, title: $title}) {
+    returning {
+      id
+      createdAt
+      title
+    }
   }
 }
+
 `

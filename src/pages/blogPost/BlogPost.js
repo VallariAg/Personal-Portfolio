@@ -20,8 +20,8 @@ function BlogPost() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>
 
-  let { title, body, createdAt } = data.post;
-  createdAt = new Date(parseInt(createdAt)).toDateString();
+  let { title, body, createdAt } = data.blogs[0];
+  createdAt = new Date(createdAt).toDateString();
 
   const readingTarget = React.createRef();
   return (
@@ -33,10 +33,7 @@ function BlogPost() {
         <ReactMarkdown
           className="articleBody"
           source={body}
-          transformImageUri={uri =>
-            uri.startsWith("http") ? uri : `${process.env.REACT_APP_SERVER_URL}/blog/${id}/${uri}`
-          }
-          escapeHtml="false"
+          // escapeHtml="false"
           plugins={[
             RemarkMathPlugin,
             gfm
@@ -57,13 +54,14 @@ function BlogPost() {
 export default BlogPost;
 
 const BlogQuery = gql`
-query BlogQuery($id: Int!) {
-  post(id: $id){
+query MyQuery($id: Int) {
+  blogs(where: {id: {_eq: $id}}) {
     title
     id
     description
     body
     createdAt
+    imgHead
   }
 }
 `;
