@@ -6,11 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import {  HashRouter } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-
+console.log(process.env.HASURA_SECRET, process.env.REACT_APP_SERVER_URL)
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_SERVER_URL,
+  uri: process.env.REACT_APP_HASURA_URL,
   headers: {
-    'x-hasura-admin-secret': process.env.HASURA_SECRET
+    'x-hasura-admin-secret': process.env.REACT_APP_HASURA_SECRET
   },
   cache: new InMemoryCache()
 });
