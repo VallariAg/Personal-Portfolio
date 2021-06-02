@@ -30,7 +30,18 @@ const ProjectData = {
         avatar: "3",
         img: "https://i.imgur.com/OTgVE2i.png",
         link: "https://github.com/VallariAg/Attendance-Tracker",
-    }
+    },
+    4: {
+        title: "Unwind",
+        body: "An app that gives you a space to journal, label emotions, and track lifestyle habits (like water intake, sleep, gratitude, etc). Also, make lists like morning/night routines and feel-good hobbies/tasks.",
+        description: `An app to track your mental health. Journal to write notes, guided notes (with prompts), add pictures to capture your day and store your memories. Mood Tracker to label your emotions and track how your days are going. Lifestyle Habit tracker to track water intake, amount of sleep (and timings), physical work. Gratitude journal to rite three things you are grateful of daily. Dream journal to Write your dreams for the memories or to take a look into your subconsiousness. Feed to know more information about mental and physical health.
+        Made with React Native and Apollo GraphQL with Hasura.`,
+        date: "January 2020",
+        avatar: "3",
+        img: "https://i.ytimg.com/vi_webp/bbM1T8wtLPI/maxresdefault.webp",
+        link: "https://github.com/VallariAg/unwind-app",
+    },
+
 }
 
 
@@ -70,7 +81,7 @@ const cardStyle = {
 }
 function ProjectCard({ id, handleClickOpen }) {
     return (
-        <div className="project-item" style={cardStyle["project-item"]} onClick={() => handleClickOpen(id)} target="_blank">
+        <div className="project-item" onClick={() => handleClickOpen(id)} target="_blank">
             <img style={cardStyle["project-icon"]} src={ProjectData[id]["img"]} alt="project" />
             <div>
                 <h3>{ProjectData[id]["title"]}</h3>
@@ -102,8 +113,9 @@ function Project() {
                 <h2 className="sectionHeader">Projects</h2>
             </div>
             <p style={{ textAlign: "center" }}>Here are some of exciting projects I've worked on.</p>
-            <div style={cardStyle["project-section"]}>
-                <ProjectCard handleClickOpen={handleClickOpen} id={1} />
+            <div className="project-section{">
+            {/* <div style={cardStyle["project-section"]}> */}
+                <ProjectCard handleClickOpen={handleClickOpen} id={4} />
                 <ProjectCard handleClickOpen={handleClickOpen} id={2} />
                 <ProjectCard handleClickOpen={handleClickOpen} id={3} />
             </div>

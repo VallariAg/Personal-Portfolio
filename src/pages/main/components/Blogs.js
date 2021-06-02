@@ -12,6 +12,7 @@ query MyQuery($id: Int) {
     description
     createdAt
     imgHead
+    link
   }
 }
     `;
@@ -30,15 +31,17 @@ function BlogItem({ id }) {
         id={id}
         createdAt={data.createdAt}
         imgHead={data.imgHead}
+        link={data.link}
     />)
 }
 
-function BlogCard({ title, description, id, createdAt, imgHead }) {
+function BlogCard({ title, description, id, createdAt, imgHead, link }) {
 
     let date = new Date(parseInt(createdAt));
 
     return (
-        <Link className="Card blog-item" style={{ textDecoration: 'none', height: "100%" }} to={"/blog/" + id}>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+        <div className="Card blog-item" style={{ textDecoration: 'none', height: "100%" }}>
             <Card style={{ height: "100%", }}>
                 <CardActionArea>
                     <CardMedia className="ArticleImg" image={imgHead} title={title} />
@@ -50,7 +53,8 @@ function BlogCard({ title, description, id, createdAt, imgHead }) {
                     </CardContent>
                 </CardActionArea>
             </Card>
-        </Link>
+        </div>
+        </a>
     )
 }
 
@@ -65,7 +69,7 @@ function Blogs() {
             <div className="blogs-section">
                 <BlogItem id="1" />
                 <BlogItem id="2" />
-                {/* <BlogItem id="3" /> */}
+                <BlogItem id="3" />
             </div>
             <p style={{ textAlign: "center" }}> <Link to="/blog" >Checkout all by blogs → </Link></p>
         </div>)

@@ -10,17 +10,18 @@ function BlogList() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error!</p>
 
-    return data.blogs.map(({ id, title, description, createdAt, imgHead }) => {
-        return <BlogCard title={title} description={description} id={id} createdAt={createdAt} imgHead={imgHead} />
+    return data.blogs.map(({ id, title, description, createdAt, imgHead, link }) => {
+        return <BlogCard title={title} description={description} link={link} id={id} createdAt={createdAt} imgHead={imgHead} />
     });
 }
 
-function BlogCard({ title, description, id, createdAt, imgHead }) {
+function BlogCard({ title, description, id, createdAt, imgHead, link }) {
     
     let date = new Date(createdAt);
 
     return (
-        <Link className="Card" style={{ textDecoration: 'none', height: "100%" }} to={"/blog/" + id}>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+        <div className="Card" style={{ textDecoration: 'none', height: "100%" }}>
             <Card style={{ height: "100%" }}>
                 <CardActionArea>
                     <CardMedia className="ArticleImg" image={imgHead} title={title} />
@@ -31,7 +32,8 @@ function BlogCard({ title, description, id, createdAt, imgHead }) {
                     </CardContent>
                 </CardActionArea>
             </Card>
-        </Link>
+        </div>
+        </a>
     )
 }
 
@@ -61,6 +63,7 @@ query getAllBlogs {
             description
             createdAt
             imgHead
+            link
     }
 }
 `;

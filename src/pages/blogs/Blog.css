@@ -74,13 +74,13 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 3%;
-        width: 90%;
+        width: 90vw;
         min-height: 0;
         align-items: center;
         justify-items: center;
     }
     .Card {
-        width: 98%;
+        width: 80vw;
     }
     .ArticleImg{
         height: 0;
