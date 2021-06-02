@@ -2,7 +2,6 @@ import React from 'react';
 import "./Blog.css";
 import { Card, CardContent, CardMedia, CardActionArea } from '@material-ui/core';
 import { useQuery, gql } from '@apollo/client';
-import { Link } from 'react-router-dom';
 
 function BlogList() {
     let { loading, error, data } = useQuery(AllBlogQuery);
