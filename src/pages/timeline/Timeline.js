@@ -63,7 +63,7 @@ function Timelines() {
             <Timeline align={width > 800 ? "alternate" : "left"}>
                 {
                     data.timeline.map(({ id, title, body, time, description }) => {
-                        let date = new Date(parseInt(time));
+                        let date = new Date(time);
                         date = `${date.toLocaleString('default', { month: 'long' })} ${date.getUTCFullYear()}`
                         // let date = new Date(parseInt(time)).toDateString();
                         return <Block id={id} time={date} title={title} description={description} body={body} isSmallView={width < 800} />
